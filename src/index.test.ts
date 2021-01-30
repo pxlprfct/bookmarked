@@ -1,47 +1,38 @@
 import { bookmarked } from './index';
 
+const BLACK_GIRLS_CODE = {
+  href: 'https://www.blackgirlscode.com/',
+  name: 'Black Girls Code, BlackGirlsCode, Women of Color in Technology',
+};
+
+const FREE_CODE_CAMP = {
+  href: 'https://www.freecodecamp.org/',
+  name: 'Learn to Code — For Free — Coding Courses for Busy People',
+};
+
+const THE_NICEST_PLACE = {
+  href: 'https://thenicestplace.net/',
+  name: 'The Nicest Place on the Internet',
+};
+
+const NPM = {
+  href: 'https://www.npmjs.com/',
+  name: 'npm',
+};
+
+const LEARN_PROGRAMMING_BOOKMARKS = [BLACK_GIRLS_CODE, FREE_CODE_CAMP];
+
+const LEARN_PROGRAMMING_FOLDER = {
+  name: 'Learn Programming',
+  children: LEARN_PROGRAMMING_BOOKMARKS,
+};
+
+const JAVASCRIPT_FOLDER = {
+  name: 'JavaScript',
+  children: [NPM],
+};
+
 describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' standard`, () => {
-  const BLACK_GIRLS_CODE = {
-    href: 'https://www.blackgirlscode.com/',
-    name: 'Black Girls Code, BlackGirlsCode, Women of Color in Technology',
-  };
-
-  const FREE_CODE_CAMP = {
-    href: 'https://www.freecodecamp.org/',
-    name: 'Learn to Code — For Free — Coding Courses for Busy People',
-  };
-
-  const LEARN_PROGRAMMING_BOOKMARKS = [BLACK_GIRLS_CODE, FREE_CODE_CAMP];
-
-  const LEARN_PROGRAMMING_FOLDER = {
-    name: 'Learn Programming',
-    children: LEARN_PROGRAMMING_BOOKMARKS,
-  };
-
-  const THE_NICEST_PLACE = {
-    href: 'https://thenicestplace.net/',
-    name: 'The Nicest Place on the Internet',
-  };
-
-  const NPM = {
-    href: 'https://www.npmjs.com/',
-    name: 'npm',
-  };
-
-  const JAVASCRIPT_FOLDER = {
-    name: 'JavaScript',
-    children: [NPM],
-  };
-
-  const PROGRAMMING_FOLDER = {
-    name: 'Programming',
-    children: [LEARN_PROGRAMMING_FOLDER, JAVASCRIPT_FOLDER],
-  };
-
-  const FOLDER_AND_BOOKMARK = [LEARN_PROGRAMMING_FOLDER, THE_NICEST_PLACE];
-
-  const NESTED_FOLDER = [PROGRAMMING_FOLDER];
-
   it('even without being passed any data - return an empty compliant structure', () => {
     const result = bookmarked();
 
@@ -124,6 +115,8 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
   });
 
   it('when passed a folder of bookmarks and a single bookmark build them!', () => {
+    const FOLDER_AND_BOOKMARK = [LEARN_PROGRAMMING_FOLDER, THE_NICEST_PLACE];
+
     const result = bookmarked(FOLDER_AND_BOOKMARK);
 
     expect(result).toMatchInlineSnapshot(`
@@ -148,6 +141,12 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
   });
 
   it('when passed a nested folder of bookmarks, build them!', () => {
+    const PROGRAMMING_FOLDER = {
+      name: 'Programming',
+      children: [LEARN_PROGRAMMING_FOLDER, JAVASCRIPT_FOLDER],
+    };
+    const NESTED_FOLDER = [PROGRAMMING_FOLDER];
+
     const result = bookmarked(NESTED_FOLDER);
 
     expect(result).toMatchInlineSnapshot(`
