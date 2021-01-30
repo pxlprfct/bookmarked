@@ -1,7 +1,16 @@
-export const DT = (content: string): string => `<DT>${content}</DT>`;
-export const H3 = (content: string): string => `<H3>${content}</H3>`;
-export const A = (content: string, href: string): string =>
-  `<A HREF="${href}">${content}</A>`;
+const buildTags = (tag: string) => (content: string): string =>
+  `<${tag}>${content}</${tag}>`;
+
+// FIXME: do this better!
+const buildTagsWithProperties = (tag: string) => (properties: string) => (
+  content: string,
+) => `<${tag} ${properties}>${content}</${tag}>`;
+
+export const DT = buildTags('DT');
+export const H3 = buildTags('H3');
+export const A = (href: string) =>
+  buildTagsWithProperties('A')(`HREF="${href}"`);
+
 // FIXME: NYI
-// export const DL = (content: string): string => `<DL>${content}</DL>`;
-// export const P = (content: string): string => `<P>${content}</P>`;
+export const DL = buildTags('DL');
+export const P = buildTags('P');

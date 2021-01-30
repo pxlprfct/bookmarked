@@ -1,6 +1,6 @@
-import { WRAPPER, SPACER, DOUBLE_SPACER } from './constants';
+import { WRAPPER } from './constants';
 import { Bookmark, isBookmark, Folder, isFolder } from './types';
-import { DT, H3, A } from './tags';
+import { DT, DL, P, H3, A } from './tags';
 
 const build = (content: Bookmark[] | Folder[] | unknown[]) =>
   // https://github.com/microsoft/TypeScript/issues/36390
@@ -19,20 +19,13 @@ const build = (content: Bookmark[] | Folder[] | unknown[]) =>
     }, [])
     .join('\n');
 
-const buildFolder = (current: Folder): string => {
-  return [
-    '<DL><P>',
-    formatFolder(current),
-    build(current.children),
-    '</DL></P>',
-  ].join('\n');
-};
+const formatFolder = (folder: Folder): string => DT(H3(folder.name));
 
-const formatFolder = (folder: Folder): string =>
-  `${SPACER}${DT(H3(folder.name))}`;
+const buildFolder = (current: Folder): string =>
+  DL(P(`${formatFolder(current)}${build(current.children)}`));
 
 const formatBookmark = (bookmark: Bookmark): string =>
-  `${DOUBLE_SPACER}${DT(A(bookmark.name, bookmark.href))}`;
+  DT(A(bookmark.href)(bookmark.name));
 
 export const bookmarked = (content?: unknown[]): string =>
   WRAPPER(content ? build(content) : '');

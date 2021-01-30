@@ -1,6 +1,6 @@
 {
   "name": "bookmarked",
-  "description": "A tiny dependency free library for building bookmark files.",
+  "description": "A tiny (dependency free!) library for building bookmark files.",
   "version": "1.0.6",
   "author": "Ollie Williams <hey@ollie.work>",
   "bugs": {
@@ -52,11 +52,11 @@
   },
   "scripts": {
     "build": "rimraf dist && rollup -c",
-    "watch": "rollup -cw",
     "lint": "eslint . --ext .ts --cache --fix",
     "start": "node dist/index.js",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "watch": "rollup -cw"
   },
   "types": "dist/index.d.ts"
 }
