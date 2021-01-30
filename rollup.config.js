@@ -1,17 +1,25 @@
 import typescript from 'rollup-plugin-typescript2';
+import pkg from './package.json';
 
 export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/index.esm.js',
-      format: 'es',
+      file: pkg.main,
+      format: 'cjs',
     },
     {
-      file: 'dist/index.umd.js',
-      format: 'umd',
-      name: 'index',
+      file: pkg.module,
+      format: 'es',
     },
   ],
-  plugins: [typescript()],
+  external: [
+    ...Object.keys(pkg.dependencies || {}),
+    ...Object.keys(pkg.peerDependencies || {}),
+  ],
+  plugins: [
+    typescript({
+      typescript: require('typescript'),
+    }),
+  ],
 };

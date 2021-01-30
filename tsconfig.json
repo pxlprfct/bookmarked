@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "module": "ES2015",
+    "module": "es6",
     "target": "ES2015",
     "noImplicitAny": true,
     "removeComments": true,
     "declaration": true,
+    "declarationDir": "./dist",
     "preserveConstEnums": true,
     "outDir": "./dist",
     "rootDir": "src",
@@ -16,8 +17,8 @@
       {
         "name": "typescript-tslint-plugin"
       }
-    ],
+    ]
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

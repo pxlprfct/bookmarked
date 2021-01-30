@@ -1,5 +1,5 @@
 import { WRAPPER, SPACER, DOUBLE_SPACER } from './constants';
-import { Bookmark, isBookmark, Folder, isFolder } from './ts/types';
+import { Bookmark, isBookmark, Folder, isFolder } from './types';
 import { DT, H3, A } from './tags';
 
 const build = (content: Bookmark[] | Folder[] | unknown[]) =>
