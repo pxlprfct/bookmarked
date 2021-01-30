@@ -70,10 +70,10 @@ const html = bookmarked(bookmarks)
     <H3>Learn Programming</H3>
   </DT>
   <DT>
-    <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+    <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
   </DT>
   <DT>
-    <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+    <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
   </DT>
 </P>
 </DL></P></DL>
@@ -120,10 +120,10 @@ const html = bookmarked(bookmarks)
       <H3>Learn Programming</H3>
     </DT>
     <DT>
-      <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+      <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
     </DT>
     <DT>
-      <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+      <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
     </DT>
   </P>
 </DL>
@@ -133,7 +133,7 @@ const html = bookmarked(bookmarks)
     <H3>JavaScript</H3>
   </DT>
   <DT>
-    <A HREF=\\"https://www.npmjs.com/\\">npm</A>
+    <A HREF="https://www.npmjs.com/">npm</A>
   </DT>
 </P>
 </DL>
