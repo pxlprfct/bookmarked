@@ -1,26 +1,23 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ESNext",
-    "lib": ["ESNext"],
+    "module": "ES2015",
+    "target": "ES2015",
     "noImplicitAny": true,
     "removeComments": true,
     "declaration": true,
     "preserveConstEnums": true,
-    "outDir": "dist",
+    "outDir": "./dist",
+    "rootDir": "src",
+    "strict": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
     "plugins": [
       {
         "name": "typescript-tslint-plugin"
       }
     ],
-    "rootDir": "src",
-    "allowJs": true
   },
-  "include": ["src/"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
