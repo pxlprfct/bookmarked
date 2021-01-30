@@ -1,9 +1,17 @@
-# Bookmarked
-A tiny, dependency free library for building bookmark files.
+# `bookmarked` 🔖
+![GitHub](https://img.shields.io/github/license/pxlprfct/bookmarked)  ![npm](https://img.shields.io/npm/v/bookmarked) ![CI/CD](https://github.com/pxlprfct/bookmarked/workflows/CI/CD/badge.svg?branch=main)
+
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=coverage)](https://sonarcloud.io/dashboard?id=bookmarked)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=ncloc)](https://sonarcloud.io/dashboard?id=bookmarked)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=bookmarked)
+
+A tiny (dependency free!) library for building bookmark files.
+
+`bookmarked` supports ES Modules (ESM), CommonJS (CJS), and the Universal Module Definition (UMD) - so  it'll be usable wherever you need it.
 
 ## Install
-```zsh
-$ npm install bookmarked
+```sh
+$ npm i bookmarked
 ```
 
 ## Usage
@@ -28,24 +36,22 @@ const html = bookmarked(bookmarks)
 ```html
 <!DOCTYPE NETSCAPE-Bookmark-file-1>
 <!-- This is an automatically generated file.
-     It will be read and overwritten.
-     DO NOT EDIT! -->
+      It will be read and overwritten.
+      DO NOT EDIT! -->
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <TITLE>Bookmarks</TITLE>
 <H1>Bookmarks</H1>
-<DL>
-  <p>
-    <DT><A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
-    <DT><A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
-  </p>
-</DL>`);
+<DL><P><DT>
+  <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+</DT>
+<DT>
+  <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
+</DT></P></DL>
 ```
 
 ### Bookmarks inside folders
 ```ts
-import { bookmarked } from 'bookmarked';
-
-const bookmarks = [
+[
   {
     name: 'Learn to code',
     children: [
@@ -59,33 +65,86 @@ const bookmarks = [
       },
     ],
   },
-  {
-    href: 'https://thenicestplace.net/',
-    name: 'The Nicest Place on the Internet',
-  },
 ];
-
-const html = bookmarked(bookmarks)
 ```
 
 ```html
-<!DOCTYPE NETSCAPE-Bookmark-file-1>
-<!-- This is an automatically generated file.
-     It will be read and overwritten.
-     DO NOT EDIT! -->
-<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
-<TITLE>Bookmarks</TITLE>
-<H1>Bookmarks</H1>
+...
+<DL><P><DL>
+  <P>
+  <DT>
+    <H3>Learn Programming</H3>
+  </DT>
+  <DT>
+    <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+  </DT>
+  <DT>
+    <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
+  </DT>
+</P>
+</DL></P></DL>
+```
+
+### Folders inside folders
+```ts
+[
+  {
+    name: 'Programming',
+    children: [
+      {
+        name: 'Learn Programming',
+        children: [
+          {
+            href: 'https://www.blackgirlscode.com/',
+            name: 'Black Girls Code, BlackGirlsCode, Women of Color in Technology'
+          },
+          {
+            href: 'https://www.freecodecamp.org/',
+            name: 'Learn to Code — For Free — Coding Courses for Busy People'
+          }
+        ]
+      },
+      {
+        name: 'JavaScript',
+        children: [ { href: 'https://www.npmjs.com/', name: 'npm' } ]
+      }
+    ]
+  }
+]
+```
+
+```html
+...
+<DL><P><DL>
+  <P>
+  <DT>
+    <H3>Programming</H3>
+  </DT>
+  <DL>
+    <P>
+    <DT>
+      <H3>Learn Programming</H3>
+    </DT>
+    <DT>
+      <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+    </DT>
+    <DT>
+      <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
+    </DT>
+  </P>
+</DL>
 <DL>
-  <p>
-    <DT><H3 ADD_DATE="1611235283" LAST_MODIFIED="1611235283">Programming</H3>
-    <DL><p>
-      <DT><A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
-      <DT><A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
-    </p></DL>
-    <DT><A HREF="https://thenicestplace.net/">The Nicest Place on the Internet</A>
-  </p>
-</DL>`);
+  <P>
+  <DT>
+    <H3>JavaScript</H3>
+  </DT>
+  <DT>
+    <A HREF="https://www.npmjs.com/">npm</A>
+  </DT>
+</P>
+</DL>
+</P>
+</DL></P></DL>
 ```
 
 Check out the test file for more example!

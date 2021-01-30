@@ -1,8 +1,7 @@
-export const SPACER = '  ';
+import { formatHTML } from './format';
+import { DL, P } from './tags';
 
-export const DOUBLE_SPACER = SPACER.repeat(2);
-
-export const HEAD = `<!DOCTYPE NETSCAPE-Bookmark-file-1>
+export const HEADER = `<!DOCTYPE NETSCAPE-Bookmark-file-1>
 <!-- This is an automatically generated file.
      It will be read and overwritten.
      DO NOT EDIT! -->
@@ -10,10 +9,5 @@ export const HEAD = `<!DOCTYPE NETSCAPE-Bookmark-file-1>
 <TITLE>Bookmarks</TITLE>
 <H1>Bookmarks</H1>`;
 
-// TODO: replace with tags throughout
-export const WRAPPER = (content: string): string => `${HEAD}
-<DL>
-${SPACER}<P>
-${content}
-${SPACER}</P>
-</DL>`;
+export const WRAPPER = (content: string): string =>
+  `${HEADER}\n${DL(P(formatHTML(content)))}`;

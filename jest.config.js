@@ -10,7 +10,7 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   testMatch: ['<rootDir>/**/src/(*.)test.(js|jsx|ts|tsx)'],
-  testPathIgnorePatterns: ['<rootDir>/test/', '<rootDir>/build/'],
+  testPathIgnorePatterns: ['<rootDir>/test/', '<rootDir>/dist/'],
   globals: {
     'ts-jest': {
       babel: true,
