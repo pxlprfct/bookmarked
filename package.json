@@ -2,7 +2,7 @@
   "name": "bookmarked",
   "description": "A tiny dependency free library for building bookmark files.",
   "version": "1.0.5",
-  "author": "hey@ollie.work",
+  "author": "Ollie Williams <hey@ollie.work>",
   "bugs": {
     "url": "https://github.com/pxlprfct/bookmarked/issues"
   },
@@ -52,9 +52,9 @@
   },
   "scripts": {
     "build": "rimraf dist && rollup -c",
+    "watch": "rollup -cw",
     "lint": "eslint . --ext .ts --cache --fix",
     "start": "node dist/index.js",
-    "watch": "rollup -cw",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
