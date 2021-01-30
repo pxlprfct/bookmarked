@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonJS",
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "noImplicitAny": true,
+    "removeComments": true,
+    "declaration": true,
+    "preserveConstEnums": true,
+    "outDir": "build",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ],
+    "rootDirs": ["src", "test"],
+    "allowJs": true
+  },
+  "include": ["src/"],
+  "exclude": ["node_modules", "build", "test"]
+}

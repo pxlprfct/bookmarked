@@ -1,0 +1,58 @@
+{
+  "name": "bookmarked",
+  "version": "1.0.0",
+  "description": "A tiny dependency free library for building bookmark files.",
+  "main": "src/index.js",
+  "keywords": [
+    "bookmark",
+    "chrome",
+    "firefox",
+    "safari"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "lint": "eslint . --ext .ts --cache --fix",
+    "build": "rimraf build && tsc",
+    "start": "node build/src/index.js",
+    "start:watch": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pxlprfct@github.com/pxlprfct/bookmarked.git"
+  },
+  "author": "hey@ollie.work",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pxlprfct/bookmarked/issues"
+  },
+  "homepage": "https://github.com/pxlprfct/bookmarked#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/eslint": "^7.2.6",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/nodemon": "^1.19.0",
+    "@types/prettier": "^2.1.6",
+    "@types/rimraf": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.5.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
