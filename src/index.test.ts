@@ -150,12 +150,6 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
     };
     const NESTED_FOLDER = [PROGRAMMING_FOLDER];
 
-    const util = require('util');
-
-    console.log(
-      util.inspect(NESTED_FOLDER, { showHidden: false, depth: null }),
-    );
-
     const result = bookmarked(NESTED_FOLDER);
 
     expect(result).toMatchInlineSnapshot(`
