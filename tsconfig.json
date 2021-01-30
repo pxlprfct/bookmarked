@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "module": "commonJS",
+    "module": "ESNext",
     "target": "ESNext",
     "lib": ["ESNext"],
     "noImplicitAny": true,
     "removeComments": true,
     "declaration": true,
     "preserveConstEnums": true,
-    "outDir": "build",
+    "outDir": "dist",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
@@ -18,9 +18,9 @@
         "name": "typescript-tslint-plugin"
       }
     ],
-    "rootDirs": ["src", "test"],
+    "rootDir": "src",
     "allowJs": true
   },
   "include": ["src/"],
-  "exclude": ["node_modules", "build", "test"]
+  "exclude": ["node_modules", "dist", "test"]
 }

@@ -1,20 +1,21 @@
 {
   "name": "bookmarked",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny dependency free library for building bookmark files.",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "keywords": [
     "bookmark",
     "chrome",
     "firefox",
     "safari"
   ],
+  "types": "dist/ts/types.d.ts",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
     "lint": "eslint . --ext .ts --cache --fix",
-    "build": "rimraf build && tsc",
-    "start": "node build/src/index.js",
+    "build": "rimraf dist && rollup -c rollup.config.js",
+    "start": "node dist/src/index.js",
     "start:watch": "nodemon"
   },
   "repository": {
@@ -51,6 +52,8 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
+    "rollup": "^2.38.1",
+    "rollup-plugin-typescript2": "^0.29.0",
     "ts-jest": "^26.5.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
