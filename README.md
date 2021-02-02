@@ -1,6 +1,8 @@
 # `bookmarked` 🔖
-![Node.js CI](https://github.com/pxlprfct/bookmarked/workflows/Node.js%20CI/badge.svg)
-![npm](https://img.shields.io/npm/v/bookmarked?style=plastic)
+![GitHub](https://img.shields.io/github/license/pxlprfct/bookmarked) ![CI/CD](https://github.com/pxlprfct/bookmarked/workflows/CI/CD/badge.svg?branch=main)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=coverage)](https://sonarcloud.io/dashboard?id=bookmarked)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=ncloc)](https://sonarcloud.io/dashboard?id=bookmarked)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=bookmarked)
 
 A tiny (dependency free!) library for building bookmark files.
 
