@@ -1,4 +1,6 @@
 # `bookmarked` 🔖
+![Node.js CI](https://github.com/pxlprfct/bookmarked/workflows/Node.js%20CI/badge.svg)
+
 A tiny (dependency free!) library for building bookmark files.
 
 `bookmarked` supports ES Modules (ESM), CommonJS (CJS), and the Universal Module Definition (UMD) - so  it'll be usable wherever you need it.
