@@ -2,11 +2,9 @@ import { WRAPPER } from './constants';
 import { Bookmark, isBookmark, Folder, isFolder } from './types';
 import { DT, DL, P, H3, A } from './tags';
 
-const build = (content: Bookmark[] | Folder[] | unknown[]) =>
-  // https://github.com/microsoft/TypeScript/issues/36390
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (content as any[])
-    .reduce((acc, current) => {
+const build = (content: (Bookmark | Folder)[]) =>
+  content
+    .reduce((acc: string[], current) => {
       if (isFolder(current)) {
         acc.push(buildFolder(current));
       }
@@ -27,5 +25,5 @@ const buildFolder = (current: Folder): string =>
 const formatBookmark = (bookmark: Bookmark): string =>
   DT(A(bookmark.href)(bookmark.name));
 
-export const bookmarked = (content?: unknown[]): string =>
+export const bookmarked = (content?: (Bookmark | Folder)[]): string =>
   WRAPPER(content ? build(content) : '');

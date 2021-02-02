@@ -16,7 +16,7 @@ export const isBookmark = (
 export type Folder = {
   name: string;
   add_date?: string;
-  children: Bookmark[];
+  children: (Bookmark | Folder)[];
   // FIXME: NYI
   // last_modified?: string;
   // TODO: something for showing in toolbar?
