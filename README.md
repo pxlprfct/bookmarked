@@ -1,5 +1,6 @@
 # `bookmarked` 🔖
 ![Node.js CI](https://github.com/pxlprfct/bookmarked/workflows/Node.js%20CI/badge.svg)
+![npm](https://img.shields.io/npm/v/bookmarked?style=plastic)
 
 A tiny (dependency free!) library for building bookmark files.
 
