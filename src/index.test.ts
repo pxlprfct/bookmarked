@@ -1,35 +1,10 @@
-import { util } from 'prettier';
 import { bookmarked } from './index';
-
-const BLACK_GIRLS_CODE = {
-  href: 'https://www.blackgirlscode.com/',
-  name: 'Black Girls Code, BlackGirlsCode, Women of Color in Technology',
-};
-
-const FREE_CODE_CAMP = {
-  href: 'https://www.freecodecamp.org/',
-  name: 'Learn to Code — For Free — Coding Courses for Busy People',
-};
-
-const THE_NICEST_PLACE = {
-  href: 'https://thenicestplace.net/',
-  name: 'The Nicest Place on the Internet',
-};
-
-const NPM = {
-  href: 'https://www.npmjs.com/',
-  name: 'npm',
-};
-
-const LEARN_PROGRAMMING_FOLDER = {
-  name: 'Learn Programming',
-  children: [BLACK_GIRLS_CODE, FREE_CODE_CAMP],
-};
-
-const JAVASCRIPT_FOLDER = {
-  name: 'JavaScript',
-  children: [NPM],
-};
+import { BOOKMARKS } from '../test/fixtures/bookmarks';
+const { BLACK_GIRLS_CODE, FREE_CODE_CAMP, THE_NICEST_PLACE } = BOOKMARKS;
+import {
+  LEARN_PROGRAMMING_FOLDER,
+  NESTED_FOLDER,
+} from '../test/fixtures/folders';
 
 describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' standard`, () => {
   it('even without being passed any data - return an empty, but compliant structure', () => {
@@ -144,12 +119,6 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
   });
 
   it('passing a folder of bookmarks that contains another folder of bookmarks', () => {
-    const PROGRAMMING_FOLDER = {
-      name: 'Programming',
-      children: [LEARN_PROGRAMMING_FOLDER, JAVASCRIPT_FOLDER],
-    };
-    const NESTED_FOLDER = [PROGRAMMING_FOLDER];
-
     const result = bookmarked(NESTED_FOLDER);
 
     expect(result).toMatchInlineSnapshot(`

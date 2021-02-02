@@ -8,7 +8,7 @@
     "declarationDir": "./dist",
     "preserveConstEnums": true,
     "outDir": "./dist",
-    "rootDir": "src",
+    "rootDirs": ["src", "test"],
     "strict": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
