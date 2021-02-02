@@ -1,10 +1,10 @@
 import { bookmarked } from './index';
-import { BOOKMARKS } from '../test/fixtures/bookmarks';
+import { BOOKMARKS } from './test/fixtures/bookmarks';
 const { BLACK_GIRLS_CODE, FREE_CODE_CAMP, THE_NICEST_PLACE } = BOOKMARKS;
 import {
   LEARN_PROGRAMMING_FOLDER,
   NESTED_FOLDER,
-} from '../test/fixtures/folders';
+} from './test/fixtures/folders';
 
 describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' standard`, () => {
   it('even without being passed any data - return an empty, but compliant structure', () => {
