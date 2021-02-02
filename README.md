@@ -1,5 +1,6 @@
 # `bookmarked` 🔖
-![GitHub](https://img.shields.io/github/license/pxlprfct/bookmarked) ![CI/CD](https://github.com/pxlprfct/bookmarked/workflows/CI/CD/badge.svg?branch=main)
+![GitHub](https://img.shields.io/github/license/pxlprfct/bookmarked)  ![npm](https://img.shields.io/npm/v/bookmarked) ![CI/CD](https://github.com/pxlprfct/bookmarked/workflows/CI/CD/badge.svg?branch=main)
+
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=coverage)](https://sonarcloud.io/dashboard?id=bookmarked)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=ncloc)](https://sonarcloud.io/dashboard?id=bookmarked)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=bookmarked)
