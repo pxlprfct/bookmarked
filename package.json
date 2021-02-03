@@ -1,7 +1,7 @@
 {
   "name": "bookmarked",
   "description": "A tiny (dependency free!) library for building bookmark files.",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "author": "Ollie Williams <hey@ollie.work>",
   "bugs": {
     "url": "https://github.com/pxlprfct/bookmarked/issues"
