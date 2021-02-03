@@ -26,6 +26,8 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         registry-url: 'https://npm.pkg.github.com'
-    - run: npm publish
+        scope: '@pxlprfct'
+    - name: Publish to Github
+      run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
