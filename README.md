@@ -159,4 +159,4 @@ const html = bookmarked(bookmarks)
 </DL>
 ```
 
-Check out the test file for more example!
+Check out the test file for more examples
