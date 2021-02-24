@@ -15,4 +15,12 @@ export const BOOKMARKS = {
     href: 'https://www.npmjs.com/',
     name: 'npm',
   },
+  SMASHING_MAGAZINE: {
+    href: 'https://www.smashingmagazine.com/',
+    name: 'smashingmagazine',
+  },
+  MDN: {
+    href: 'https://developer.mozilla.org/en-US/',
+    name: 'MDN Web Docs',
+  },
 };
