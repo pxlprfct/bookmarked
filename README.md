@@ -41,12 +41,16 @@ const html = bookmarked(bookmarks)
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <TITLE>Bookmarks</TITLE>
 <H1>Bookmarks</H1>
-<DL><P><DT>
-  <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
-</DT>
-<DT>
-  <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
-</DT></P></DL>
+<DL>
+  <P>
+    <DT>
+      <A href="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+    </DT>
+    <DT>
+      <A href="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
+    </DT>
+  </P>
+</DL>
 ```
 
 ### Bookmarks inside folders
@@ -70,19 +74,23 @@ const html = bookmarked(bookmarks)
 
 ```html
 ...
-<DL><P><DL>
+<DL>
   <P>
-  <DT>
-    <H3>Learn Programming</H3>
-  </DT>
-  <DT>
-    <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
-  </DT>
-  <DT>
-    <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
-  </DT>
-</P>
-</DL></P></DL>
+    <DL>
+      <P>
+        <DT>
+          <H3>Learn Programming</H3>
+        </DT>
+        <DT>
+          <A href="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+        </DT>
+        <DT>
+          <A href="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
+        </DT>
+      </P>
+    </DL>
+  </P>
+</DL>
 ```
 
 ### Folders inside folders
@@ -115,36 +123,40 @@ const html = bookmarked(bookmarks)
 
 ```html
 ...
-<DL><P><DL>
-  <P>
-  <DT>
-    <H3>Programming</H3>
-  </DT>
-  <DL>
-    <P>
-    <DT>
-      <H3>Learn Programming</H3>
-    </DT>
-    <DT>
-      <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
-    </DT>
-    <DT>
-      <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
-    </DT>
-  </P>
-</DL>
 <DL>
   <P>
-  <DT>
-    <H3>JavaScript</H3>
-  </DT>
-  <DT>
-    <A HREF="https://www.npmjs.com/">npm</A>
-  </DT>
-</P>
+    <DL>
+      <P>
+        <DT>
+          <H3>Programming</H3>
+        </DT>
+        <DL>
+          <P>
+            <DT>
+              <H3>Learn Programming</H3>
+            </DT>
+            <DT>
+              <A href="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+            </DT>
+            <DT>
+              <A href="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
+            </DT>
+          </P>
+        </DL>
+        <DL>
+          <P>
+            <DT>
+              <H3>JavaScript</H3>
+            </DT>
+            <DT>
+              <A href="https://www.npmjs.com/">npm</A>
+            </DT>
+          </P>
+        </DL>
+      </P>
+    </DL>
+  </P>
 </DL>
-</P>
-</DL></P></DL>
 ```
 
 Check out the test file for more example!
