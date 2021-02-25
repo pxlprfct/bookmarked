@@ -1,11 +1,12 @@
+import { Folder } from './../../types';
 import { BOOKMARKS } from './bookmarks';
 
-export const LEARN_PROGRAMMING_FOLDER = {
+export const LEARN_PROGRAMMING_FOLDER: Folder = {
   name: 'Learn Programming',
   children: [BOOKMARKS.BLACK_GIRLS_CODE, BOOKMARKS.FREE_CODE_CAMP],
 };
 
-const JAVASCRIPT_FOLDER = {
+const JAVASCRIPT_FOLDER: Folder = {
   name: 'JavaScript',
   children: [BOOKMARKS.NPM],
 };
@@ -17,7 +18,7 @@ export const NESTED_FOLDERS = [
   },
 ];
 
-const CODING_RESOURCES_FOLDER = {
+const CODING_RESOURCES_FOLDER: Folder = {
   name: 'Coding Resources',
   children: [BOOKMARKS.SMASHING_MAGAZINE, BOOKMARKS.MDN],
 };
