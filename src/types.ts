@@ -2,10 +2,10 @@ export interface Bookmark {
   href: string;
   name: string;
   // FIXME:NYI
-  // add_date?=string;
-  // icon?=string;
-  // tags?=string[];
-  // shortcut_url?=string;
+  // add_date?: string;
+  // icon?: string;
+  // tags?: string[];
+  // shortcut_url?: string;
 }
 
 export const isBookmark = (
