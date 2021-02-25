@@ -1,3 +1,4 @@
+import { Folder } from './types';
 import { bookmarked } from './index';
 import { BOOKMARKS } from './test/fixtures/bookmarks';
 const { BLACK_GIRLS_CODE, FREE_CODE_CAMP, THE_NICEST_PLACE } = BOOKMARKS;
@@ -10,9 +11,7 @@ import {
 
 describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' standard`, () => {
   it('even without being passed any data - return an empty, but compliant structure', () => {
-    const result = bookmarked();
-
-    expect(result).toMatchInlineSnapshot(`
+    expect(bookmarked()).toMatchInlineSnapshot(`
       "<!DOCTYPE NETSCAPE-Bookmark-file-1>
       <!-- This is an automatically generated file.
            It will be read and overwritten.
@@ -28,10 +27,9 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
     `);
   });
 
-  it('passing a single bookmark', () => {
-    const result = bookmarked([BLACK_GIRLS_CODE]);
-
-    expect(result).toMatchInlineSnapshot(`
+  describe('Generating bookmarks', () => {
+    it('should generate a single bookmark', () => {
+      expect(bookmarked([BLACK_GIRLS_CODE])).toMatchInlineSnapshot(`
       "<!DOCTYPE NETSCAPE-Bookmark-file-1>
       <!-- This is an automatically generated file.
            It will be read and overwritten.
@@ -42,17 +40,16 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
       <DL>
         <P>
           <DT>
-            <A href=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+            <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
           </DT>
         </P>
       </DL>"
     `);
-  });
+    });
 
-  it('passing multiple bookmarks', () => {
-    const result = bookmarked([BLACK_GIRLS_CODE, FREE_CODE_CAMP]);
-
-    expect(result).toMatchInlineSnapshot(`
+    it('should generate multiple bookmarks', () => {
+      expect(bookmarked([BLACK_GIRLS_CODE, FREE_CODE_CAMP]))
+        .toMatchInlineSnapshot(`
       "<!DOCTYPE NETSCAPE-Bookmark-file-1>
       <!-- This is an automatically generated file.
            It will be read and overwritten.
@@ -63,20 +60,20 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
       <DL>
         <P>
           <DT>
-            <A href=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+            <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
           </DT>
           <DT>
-            <A href=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+            <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
           </DT>
         </P>
       </DL>"
     `);
+    });
   });
 
-  it('passing a folder that contains multiple bookmarks', () => {
-    const result = bookmarked([LEARN_PROGRAMMING_FOLDER]);
-
-    expect(result).toMatchInlineSnapshot(`
+  describe('Generating folders of bookmarks', () => {
+    it('should generate a folder that contains multiple bookmarks', () => {
+      expect(bookmarked([LEARN_PROGRAMMING_FOLDER])).toMatchInlineSnapshot(`
       "<!DOCTYPE NETSCAPE-Bookmark-file-1>
       <!-- This is an automatically generated file.
            It will be read and overwritten.
@@ -92,24 +89,130 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
                 <H3>Learn Programming</H3>
               </DT>
               <DT>
-                <A href=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
               </DT>
               <DT>
-                <A href=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
               </DT>
             </P>
           </DL>
         </P>
       </DL>"
     `);
-  });
+    });
 
-  it('passing a folder that contains multiple bookmarks, and another single bookmark which is outside the folder', () => {
-    const FOLDER_AND_BOOKMARK = [LEARN_PROGRAMMING_FOLDER, THE_NICEST_PLACE];
+    describe('Generating folders with properties', () => {
+      it('should generate a folder with the date it was added', () => {
+        const LEARN_PROGRAMMING_FOLDER_ADD_DATE: Folder = {
+          ...LEARN_PROGRAMMING_FOLDER,
+          add_date: '1609459200000',
+        };
 
-    const result = bookmarked(FOLDER_AND_BOOKMARK);
+        expect(bookmarked([LEARN_PROGRAMMING_FOLDER_ADD_DATE]))
+          .toMatchInlineSnapshot(`
+      "<!DOCTYPE NETSCAPE-Bookmark-file-1>
+      <!-- This is an automatically generated file.
+           It will be read and overwritten.
+           DO NOT EDIT! -->
+      <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+      <TITLE>Bookmarks</TITLE>
+      <H1>Bookmarks</H1>
+      <DL>
+        <P>
+          <DL>
+            <P>
+              <DT>
+                <H3 ADD_DATE=\\"1609459200000\\">Learn Programming</H3>
+              </DT>
+              <DT>
+                <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+              </DT>
+              <DT>
+                <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+              </DT>
+            </P>
+          </DL>
+        </P>
+      </DL>"
+    `);
+      });
 
-    expect(result).toMatchInlineSnapshot(`
+      it('should generate a folder with the date it was last modified', () => {
+        const LEARN_PROGRAMMING_FOLDER_LAST_MODIFIED: Folder = {
+          ...LEARN_PROGRAMMING_FOLDER,
+          last_modified: '1609459200000',
+        };
+
+        expect(bookmarked([LEARN_PROGRAMMING_FOLDER_LAST_MODIFIED]))
+          .toMatchInlineSnapshot(`
+      "<!DOCTYPE NETSCAPE-Bookmark-file-1>
+      <!-- This is an automatically generated file.
+           It will be read and overwritten.
+           DO NOT EDIT! -->
+      <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+      <TITLE>Bookmarks</TITLE>
+      <H1>Bookmarks</H1>
+      <DL>
+        <P>
+          <DL>
+            <P>
+              <DT>
+                <H3 LAST_MODIFIED=\\"1609459200000\\">Learn Programming</H3>
+              </DT>
+              <DT>
+                <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+              </DT>
+              <DT>
+                <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+              </DT>
+            </P>
+          </DL>
+        </P>
+      </DL>"
+    `);
+      });
+
+      it('should generate a folder with the date it was added, and when it was last modified', () => {
+        const LEARN_PROGRAMMING_FOLDER_ADD_DATE: Folder = {
+          ...LEARN_PROGRAMMING_FOLDER,
+          add_date: '1609459200000',
+          last_modified: '1609459200000',
+        };
+
+        expect(bookmarked([LEARN_PROGRAMMING_FOLDER_ADD_DATE]))
+          .toMatchInlineSnapshot(`
+      "<!DOCTYPE NETSCAPE-Bookmark-file-1>
+      <!-- This is an automatically generated file.
+           It will be read and overwritten.
+           DO NOT EDIT! -->
+      <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+      <TITLE>Bookmarks</TITLE>
+      <H1>Bookmarks</H1>
+      <DL>
+        <P>
+          <DL>
+            <P>
+              <DT>
+                <H3 ADD_DATE=\\"1609459200000\\" LAST_MODIFIED=\\"1609459200000\\">Learn Programming</H3>
+              </DT>
+              <DT>
+                <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+              </DT>
+              <DT>
+                <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+              </DT>
+            </P>
+          </DL>
+        </P>
+      </DL>"
+    `);
+      });
+    });
+
+    it('should generate a folder that contains multiple bookmarks, and another single bookmark on the same level as the folder', () => {
+      const FOLDER_AND_BOOKMARK = [LEARN_PROGRAMMING_FOLDER, THE_NICEST_PLACE];
+
+      expect(bookmarked(FOLDER_AND_BOOKMARK)).toMatchInlineSnapshot(`
       "<!DOCTYPE NETSCAPE-Bookmark-file-1>
       <!-- This is an automatically generated file.
            It will be read and overwritten.
@@ -125,25 +228,23 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
                 <H3>Learn Programming</H3>
               </DT>
               <DT>
-                <A href=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
               </DT>
               <DT>
-                <A href=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
               </DT>
             </P>
           </DL>
           <DT>
-            <A href=\\"https://thenicestplace.net/\\">The Nicest Place on the Internet</A>
+            <A HREF=\\"https://thenicestplace.net/\\">The Nicest Place on the Internet</A>
           </DT>
         </P>
       </DL>"
     `);
-  });
+    });
 
-  it('passing a folder of bookmarks that contains another folder of bookmarks', () => {
-    const result = bookmarked(NESTED_FOLDERS);
-
-    expect(result).toMatchInlineSnapshot(`
+    it('should generate a folder of bookmarks that contains another folder of bookmarks', () => {
+      expect(bookmarked(NESTED_FOLDERS)).toMatchInlineSnapshot(`
       "<!DOCTYPE NETSCAPE-Bookmark-file-1>
       <!-- This is an automatically generated file.
            It will be read and overwritten.
@@ -164,10 +265,10 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
                     <H3>Learn Programming</H3>
                   </DT>
                   <DT>
-                    <A href=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                    <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                   </DT>
                   <DT>
-                    <A href=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                    <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
                   </DT>
                 </P>
               </DL>
@@ -177,7 +278,7 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
                     <H3>JavaScript</H3>
                   </DT>
                   <DT>
-                    <A href=\\"https://www.npmjs.com/\\">npm</A>
+                    <A HREF=\\"https://www.npmjs.com/\\">npm</A>
                   </DT>
                 </P>
               </DL>
@@ -186,12 +287,12 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
         </P>
       </DL>"
     `);
+    });
   });
 
-  it('passing a folder of bookmarks that contains another folder of bookmarks, which contains another folder of bookmarks', () => {
-    const result = bookmarked(DOUBLE_NESTED_FOLDERS);
-
-    expect(result).toMatchInlineSnapshot(`
+  describe('Complex scenarios', () => {
+    it('should generate a folder of bookmarks that contains another folder of bookmarks, which also contains another folder of bookmarks', () => {
+      expect(bookmarked(DOUBLE_NESTED_FOLDERS)).toMatchInlineSnapshot(`
       "<!DOCTYPE NETSCAPE-Bookmark-file-1>
       <!-- This is an automatically generated file.
            It will be read and overwritten.
@@ -207,10 +308,10 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
                 <H3>Learn Programming</H3>
               </DT>
               <DT>
-                <A href=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
               </DT>
               <DT>
-                <A href=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
               </DT>
               <DL>
                 <P>
@@ -218,10 +319,10 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
                     <H3>Coding Resources</H3>
                   </DT>
                   <DT>
-                    <A href=\\"https://www.smashingmagazine.com/\\">smashingmagazine</A>
+                    <A HREF=\\"https://www.smashingmagazine.com/\\">smashingmagazine</A>
                   </DT>
                   <DT>
-                    <A href=\\"https://developer.mozilla.org/en-US/\\">MDN Web Docs</A>
+                    <A HREF=\\"https://developer.mozilla.org/en-US/\\">MDN Web Docs</A>
                   </DT>
                 </P>
               </DL>
@@ -230,12 +331,11 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
         </P>
       </DL>"
     `);
-  });
+    });
 
-  it('passing a folder of bookmarks that contains another folder of bookmarks, which contains another folder of bookmarks and a single folder', () => {
-    const result = bookmarked(DOUBLE_NESTED_FOLDERS_AND_SINGLE_FOLDER);
-
-    expect(result).toMatchInlineSnapshot(`
+    it('should generate a folder of bookmarks that contains another folder of bookmarks, which contains yet another folder of bookmarks and then single folder', () => {
+      expect(bookmarked(DOUBLE_NESTED_FOLDERS_AND_SINGLE_FOLDER))
+        .toMatchInlineSnapshot(`
       "<!DOCTYPE NETSCAPE-Bookmark-file-1>
       <!-- This is an automatically generated file.
            It will be read and overwritten.
@@ -251,10 +351,10 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
                 <H3>Learn Programming</H3>
               </DT>
               <DT>
-                <A href=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
               </DT>
               <DT>
-                <A href=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
               </DT>
               <DL>
                 <P>
@@ -262,10 +362,10 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
                     <H3>Coding Resources</H3>
                   </DT>
                   <DT>
-                    <A href=\\"https://www.smashingmagazine.com/\\">smashingmagazine</A>
+                    <A HREF=\\"https://www.smashingmagazine.com/\\">smashingmagazine</A>
                   </DT>
                   <DT>
-                    <A href=\\"https://developer.mozilla.org/en-US/\\">MDN Web Docs</A>
+                    <A HREF=\\"https://developer.mozilla.org/en-US/\\">MDN Web Docs</A>
                   </DT>
                 </P>
               </DL>
@@ -277,12 +377,13 @@ describe(`Generated bookmarks should conform to the 'NETSCAPE-Bookmark-file-1' s
                 <H3>JavaScript</H3>
               </DT>
               <DT>
-                <A href=\\"https://www.npmjs.com/\\">npm</A>
+                <A HREF=\\"https://www.npmjs.com/\\">npm</A>
               </DT>
             </P>
           </DL>
         </P>
       </DL>"
     `);
+    });
   });
 });
