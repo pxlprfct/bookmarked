@@ -1,7 +1,7 @@
 export interface Bookmark {
   href: string;
   name: string;
-  // FIXME:NYI
+  // FIXME: NYI
   // add_date?: string;
   // icon?: string;
   // tags?: string[];
