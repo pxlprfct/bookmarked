@@ -1,8 +1,8 @@
 import { createBookmark } from './formatters/bookmark';
 import { createFolder } from './formatters/folder';
-import { indentLeft } from './utils';
-import { HEADER, AMOUNT_TO_PAD_BY } from './constants';
-import { Bookmark, isBookmark, Folder, isFolder } from './types';
+import { indentLeft, isBookmark, isFolder } from './utils';
+import { HEADER, DEFAULT_AMOUNT_TO_PAD_BY } from './constants';
+import { Bookmark, Folder } from './types';
 
 export const buildHtml = (
   content: (Bookmark | Folder)[],
@@ -27,7 +27,8 @@ export const bookmarked = (content?: (Bookmark | Folder)[]): string =>
     `${HEADER}`,
     `<DL>`,
     `  <P>`,
-    `${content ? buildHtml(content, AMOUNT_TO_PAD_BY) : ''}`,
+    // don't add any 'external' padding - the 'padding to be applied' needs to be the indent argument
+    `${content ? buildHtml(content, DEFAULT_AMOUNT_TO_PAD_BY) : ''}`,
     `  </P>`,
     `</DL>`,
   ].join('\n');

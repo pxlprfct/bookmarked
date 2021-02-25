@@ -8,24 +8,19 @@ export interface Bookmark {
   // shortcut_url?: string;
 }
 
-export const isBookmark = (
-  variableToCheck: unknown,
-): variableToCheck is Bookmark =>
-  (variableToCheck as Bookmark).href !== undefined;
+export interface Folder {
+  name: string;
+  children: (Bookmark | Folder)[];
+  // allows adding any property, but also gives hints as to what are valid tags
+  properties?: FolderProperties | Record;
+}
+
+interface Record {
+  [key: string]: string;
+}
 
 export interface FolderProperties {
   ADD_DATE?: string;
   LAST_MODIFIED?: string;
+  PERSONAL_TOOLBAR_FOLDER?: 'true' | 'false';
 }
-
-export interface Folder {
-  name: string;
-  children: (Bookmark | Folder)[];
-  add_date?: string;
-  last_modified?: string;
-  // TODO: something for when it's showing in toolbar?
-  // CHROME: PERSONAL_TOOLBAR_FOLDER="true"
-}
-
-export const isFolder = (variableToCheck: unknown): variableToCheck is Folder =>
-  (variableToCheck as Folder).children !== undefined;
