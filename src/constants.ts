@@ -5,3 +5,6 @@ export const HEADER = `<!DOCTYPE NETSCAPE-Bookmark-file-1>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <TITLE>Bookmarks</TITLE>
 <H1>Bookmarks</H1>`;
+
+// TODO: configurable with an options object
+export const AMOUNT_TO_PAD_BY = 4;
