@@ -1,18 +1,17 @@
+import { FolderProperties } from './../types';
+import { hasProperties } from './../utils';
 import { buildHtml } from '../index';
-import { AMOUNT_TO_PAD_BY } from '../constants';
+import { DEFAULT_AMOUNT_TO_PAD_BY } from '../constants';
 import { addProperties } from './properties';
-import { Folder, FolderProperties } from '../types';
+import { Folder } from '../types';
 
-const buildFolder = (folder: Folder) => {
-  const { add_date, last_modified } = folder;
+const buildProperties = (properties?: FolderProperties) =>
+  hasProperties(properties)
+    ? addProperties(properties as FolderProperties)
+    : '';
 
-  const properties: FolderProperties = {
-    ...(add_date && { ADD_DATE: add_date }),
-    ...(last_modified && { LAST_MODIFIED: last_modified }),
-  };
-
-  return `<H3` + `${addProperties(properties)}` + `>${folder.name}</H3>`;
-};
+const buildFolder = (folder: Folder) =>
+  `<H3` + `${buildProperties(folder.properties)}` + `>${folder.name}</H3>`;
 
 export const createFolder = (folder: Folder, pad: string): string =>
   [
@@ -22,7 +21,9 @@ export const createFolder = (folder: Folder, pad: string): string =>
     `${pad}      ${buildFolder(folder)}`,
     `${pad}    </DT>`,
     // recursively call the build function
-    `${buildHtml(folder.children, pad.length + AMOUNT_TO_PAD_BY)}`,
+    // don't add any 'external' padding - the 'padding to be applied' needs to be the indent argument
+    // TODO: using strings and numbers to determine padding feels off - decide on one or the other!
+    `${buildHtml(folder.children, pad.length + DEFAULT_AMOUNT_TO_PAD_BY)}`,
     `${pad}  </P>`,
     `${pad}</DL>`,
   ].join('\n');
