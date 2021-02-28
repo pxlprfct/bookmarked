@@ -1,19 +1,19 @@
-import { FolderProperties } from './../types';
+import { FolderProperties } from '../ts/types';
 import { hasProperties } from './../utils';
 import { buildHtml } from '../index';
 import { DEFAULT_AMOUNT_TO_PAD_BY } from '../constants';
-import { addProperties } from './properties';
-import { Folder } from '../types';
+import { formatProperties } from './properties';
+import { Folder } from '../ts/types';
 
-const buildProperties = (properties?: FolderProperties) =>
+const addProperties = (properties?: FolderProperties) =>
   hasProperties(properties)
-    ? addProperties(properties as FolderProperties)
+    ? formatProperties(properties as FolderProperties)
     : '';
 
 const buildFolder = (folder: Folder) =>
-  `<H3` + `${buildProperties(folder.properties)}` + `>${folder.name}</H3>`;
+  `<H3` + `${addProperties(folder.properties)}` + `>${folder.name}</H3>`;
 
-export const createFolder = (folder: Folder, pad: string): string =>
+export const addFolder = (folder: Folder, pad: string): string =>
   [
     `${pad}<DL>`,
     `${pad}  <P>`,
