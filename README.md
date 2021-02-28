@@ -7,14 +7,14 @@
 
 A tiny (dependency free!) library for building bookmark files.
 
-`bookmarked` supports ES Modules (ESM), CommonJS (CJS), and the Universal Module Definition (UMD) - so  it'll be usable wherever you need it.
+`bookmarked` supports ES Modules (ESM), CommonJS (CJS), and the Universal Module Definition (UMD) - so it'll be wherever you need it.
 
-## Install
+## How to install
 ```sh
 $ npm i bookmarked
 ```
 
-## Usage
+## How to use
 ### Single level deep bookmarks
 ```ts
 import { bookmarked } from 'bookmarked';
@@ -114,7 +114,11 @@ const html = bookmarked(bookmarks)
       },
       {
         name: 'JavaScript',
-        children: [ { href: 'https://www.npmjs.com/', name: 'npm' } ]
+        children: [
+          { 
+            href: 'https://www.npmjs.com/', name: 'npm'
+          }
+        ]
       }
     ]
   }
@@ -159,4 +163,4 @@ const html = bookmarked(bookmarks)
 </DL>
 ```
 
-Check out the test file for more examples
+Check out the [test file](https://github.com/pxlprfct/bookmarked/blob/main/src/index.test.ts) for more examples
