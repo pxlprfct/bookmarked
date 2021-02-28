@@ -1,4 +1,4 @@
-import bookmarked from './index';
+import { bookmarked } from './index';
 import { BOOKMARKS } from './test/fixtures/bookmarks/index';
 import { FOLDERS } from './test/fixtures/folders/index';
 
