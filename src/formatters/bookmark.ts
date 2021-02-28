@@ -1,11 +1,5 @@
-import { formatProperties } from './properties';
-import { hasProperties } from './../utils';
-import { Bookmark, BookmarkProperties } from '../ts/types';
-
-const addProperties = (properties?: BookmarkProperties) =>
-  hasProperties(properties)
-    ? formatProperties(properties as BookmarkProperties)
-    : '';
+import { addProperties } from './properties';
+import { Bookmark } from '../ts/types';
 
 const buildBookmark = (bookmark: Bookmark) =>
   // eslint-disable-next-line prettier/prettier

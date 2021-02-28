@@ -1,4 +1,4 @@
-import { buildHtml } from './buildHtml';
+import { buildHtml } from './formatters/html';
 import { HEADER, DEFAULT_AMOUNT_TO_PAD_BY } from './constants';
 import { Bookmark, Folder } from './ts/types';
 

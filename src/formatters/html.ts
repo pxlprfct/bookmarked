@@ -1,7 +1,7 @@
-import { addBookmark } from './formatters/bookmark';
-import { addFolder } from './formatters/folder';
-import { indentLeft, isBookmark, isFolder } from './utils';
-import { Bookmark, Folder } from './ts/types';
+import { addBookmark } from './bookmark';
+import { addFolder } from './folder';
+import { indentLeft, isBookmark, isFolder } from '../utils';
+import { Bookmark, Folder } from '../ts/types';
 
 export const buildHtml = (
   content: (Bookmark | Folder)[],

@@ -1,13 +1,7 @@
-import { Folder, FolderProperties } from '../ts/types';
-import { hasProperties } from './../utils';
-import { buildHtml } from '../buildHtml';
+import { Folder } from '../ts/types';
+import { buildHtml } from './html';
 import { DEFAULT_AMOUNT_TO_PAD_BY } from '../constants';
-import { formatProperties } from './properties';
-
-const addProperties = (properties?: FolderProperties) =>
-  hasProperties(properties)
-    ? formatProperties(properties as FolderProperties)
-    : '';
+import { addProperties } from './properties';
 
 const buildFolder = (folder: Folder) =>
   `<H3` + `${addProperties(folder.properties)}` + `>${folder.name}</H3>`;
