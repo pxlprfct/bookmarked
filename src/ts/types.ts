@@ -7,7 +7,6 @@ export interface Bookmark {
   name: string;
   // allows for adding any property, but also gives hints as to what are known valid properties
   properties?: BookmarkProperties;
-  children: never;
 }
 
 export interface BookmarkProperties extends Record {
@@ -22,7 +21,6 @@ export interface Folder {
   children: (Bookmark | Folder)[];
   // allows for adding any property, but also gives hints as to what are known valid properties
   properties?: FolderProperties;
-  href: never;
 }
 
 export interface FolderProperties extends Record {
