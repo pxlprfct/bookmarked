@@ -1,8 +1,5 @@
-import { FolderProperties } from '../types';
+const format = ([key, value]: [string, unknown]): string => `${key}="${value}"`;
 
-const buildString = ([key, value]: [string, unknown]): string =>
-  `${key}="${value}"`;
-
-export const addProperties = (properties: FolderProperties): string =>
+export const formatProperties = (properties: Record<string, unknown>): string =>
   // adding a space to the start  " <H3 foo.../>"
-  ' ' + Object.entries(properties).map(buildString).join(' ');
+  ' ' + Object.entries(properties).map(format).join(' ');
