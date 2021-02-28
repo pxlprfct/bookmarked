@@ -1,8 +1,8 @@
-import { createBookmark } from './formatters/bookmark';
-import { createFolder } from './formatters/folder';
+import { addBookmark } from './formatters/bookmark';
+import { addFolder } from './formatters/folder';
 import { indentLeft, isBookmark, isFolder } from './utils';
 import { HEADER, DEFAULT_AMOUNT_TO_PAD_BY } from './constants';
-import { Bookmark, Folder } from './types';
+import { Bookmark, Folder } from './ts/types';
 
 export const buildHtml = (
   content: (Bookmark | Folder)[],
@@ -11,11 +11,11 @@ export const buildHtml = (
   content
     .reduce((html: string[], current) => {
       if (isFolder(current)) {
-        html.push(createFolder(current, indentLeft(indent)));
+        html.push(addFolder(current, indentLeft(indent)));
       }
 
       if (isBookmark(current)) {
-        html.push(createBookmark(current, indentLeft(indent)));
+        html.push(addBookmark(current, indentLeft(indent)));
       }
 
       return html;
