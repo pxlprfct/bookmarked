@@ -1,7 +1,6 @@
 import { formatProperties } from './properties';
 import { hasProperties } from './../utils';
-import { BookmarkProperties } from '../ts/types';
-import { Bookmark } from '../ts/types';
+import { Bookmark, BookmarkProperties } from '../ts/types';
 
 const addProperties = (properties?: BookmarkProperties) =>
   hasProperties(properties)
