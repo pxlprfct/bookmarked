@@ -1,6 +1,6 @@
 import { FolderProperties } from '../ts/types';
 import { hasProperties } from './../utils';
-import { buildHtml } from '../index';
+import { buildHtml } from '../buildHtml';
 import { DEFAULT_AMOUNT_TO_PAD_BY } from '../constants';
 import { formatProperties } from './properties';
 import { Folder } from '../ts/types';
