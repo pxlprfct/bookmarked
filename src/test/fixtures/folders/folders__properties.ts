@@ -16,7 +16,7 @@ export const FOLDER_WITH_MULTIPLE_PROPERTIES: Folder = {
   },
 };
 
-export const FOLDER_WITHOUT_PROPERTIES: Folder = (function () {
+export const FOLDER_WITHOUT_PROPERTIES: Folder = (() => {
   const BOOKMARK = LEARN_PROGRAMMING_FOLDER;
   delete BOOKMARK.properties;
   return BOOKMARK;

@@ -22,7 +22,7 @@ export const BOOKMARK_WITH_EMPTY_PROPERTIES: Bookmark = {
   properties: {},
 };
 
-export const BOOKMARK_WITHOUT_PROPERTIES: Bookmark = (function () {
+export const BOOKMARK_WITHOUT_PROPERTIES: Bookmark = (() => {
   const BOOKMARK = BLACK_GIRLS_CODE;
   delete BOOKMARK.properties;
   return BOOKMARK;

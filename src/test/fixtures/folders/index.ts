@@ -15,7 +15,7 @@ import {
   FOLDER_WITH_CUSTOM_PROPERTIES,
 } from './folders__properties';
 
-export const FOLDERS = {
+const FOLDERS = {
   LEARN_PROGRAMMING_FOLDER,
   JAVASCRIPT_FOLDER,
   NESTED_FOLDERS,
@@ -28,3 +28,5 @@ export const FOLDERS = {
   FOLDER_WITH_EMPTY_PROPERTIES,
   FOLDER_WITH_CUSTOM_PROPERTIES,
 };
+
+export default FOLDERS;

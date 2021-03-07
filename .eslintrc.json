@@ -1,20 +1,4 @@
 {
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
-  },
-  "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier", "import"],
-  "extends": [
-    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
-    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-    "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
-  ],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -22,35 +6,52 @@
     "jest": true,
     "node": true
   },
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": ["jsx-a11y", "import", "prettier", "@typescript-eslint"],
+  "root": true,
   "rules": {
-    "jsx-a11y/href-no-hash": ["off"],
-    "react/jsx-filename-extension": [
-      "warn",
-      {
-        "extensions": [".js", ".jsx"]
-      }
-    ],
-    "import/prefer-default-export": "off",
-    "no-console": "off",
-    "max-len": [
-      "warn",
-      {
-        "code": 100,
-        "tabWidth": 2,
-        "ignoreComments": true,
-        "ignoreTrailingComments": true,
-        "ignoreUrls": true,
-        "ignoreStrings": true,
-        "ignoreTemplateLiterals": true,
-        "ignoreRegExpLiterals": true
-      }
-    ],
+    "prettier/prettier": ["error"],
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-object-literal-type-assertion": "off",
+    "@typescript-eslint/prefer-interface": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["off"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
     "import/extensions": [
       "error",
+      "ignorePackages",
       {
         "js": "never",
-        "ts": "never"
+        "mjs": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
       }
     ]
-  }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts", ".jsx", ".tsx", ".json"]
+      }
+    },
+    "import/extensions": [".js", ".ts", ".mjs", ".jsx", ".tsx"],
+    "react": {
+      "version": "latest"
+    }
+  }, 
+  "ignorePatterns": ["rollup.config.js", "jest.config.js", "dist/**", "coverage"]
 }
