@@ -1,7 +1,7 @@
 {
   "name": "bookmarked",
   "description": "A tiny (dependency free!) library for building bookmark files.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "author": "Ollie Williams <hey@ollie.work>",
   "bugs": {
     "url": "https://github.com/pxlprfct/bookmarked/issues"
@@ -57,6 +57,5 @@
     "watch": "rollup -cw"
   },
   "types": "dist/index.d.ts",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
