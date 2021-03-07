@@ -1,7 +1,8 @@
-import { buildHtml } from './formatters/html';
+import buildHtml from './formatters/html';
 import { HEADER, DEFAULT_AMOUNT_TO_PAD_BY } from './constants';
 import { Bookmark, Folder } from './ts/types';
 
+// eslint-disable-next-line import/prefer-default-export
 export const bookmarked = (content?: (Bookmark | Folder)[]): string =>
   [
     `${HEADER}`,

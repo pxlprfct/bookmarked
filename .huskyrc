@@ -1,6 +1,7 @@
 {
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-    "pre-commit": "npm-run-all lint test"
+    "pre-commit": "lint-staged",
+    "pre-push": "npm-run-all test build"
   }
 }

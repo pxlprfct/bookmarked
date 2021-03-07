@@ -14,7 +14,7 @@ import {
   BOOKMARK_WITH_CUSTOM_PROPERTIES,
 } from './bookmarks__properties';
 
-export const BOOKMARKS = {
+const BOOKMARKS = {
   BLACK_GIRLS_CODE,
   FREE_CODE_CAMP,
   THE_NICEST_PLACE,
@@ -27,3 +27,5 @@ export const BOOKMARKS = {
   BOOKMARK_WITHOUT_PROPERTIES,
   BOOKMARK_WITH_CUSTOM_PROPERTIES,
 };
+
+export default BOOKMARKS;
