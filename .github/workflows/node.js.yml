@@ -22,7 +22,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         cache: "pnpm"
-        registry-url: https://registry.npmjs.org
+        registry-url: https://registry.npmjs.org        
+        node-version-file: '.nvmrc'
 
     - name: Install dependencies
       run: pnpm install

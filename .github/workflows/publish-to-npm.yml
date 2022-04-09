@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
@@ -17,11 +17,11 @@ jobs:
         version: latest
 
     - name: Setup node
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         cache: "pnpm"
-        registry-url: https://registry.npmjs.org
-        node-version: 16
+        registry-url: https://registry.npmjs.org        
+        node-version-file: '.nvmrc'
 
     - name: Install dependencies
       run: pnpm install
@@ -34,8 +34,6 @@ jobs:
     
     - name: Publish to NPM
       if: ${{ success() }}
-      run: |
-        npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-        npm publish --ignore-scripts
+      run: npm publish --access public
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
