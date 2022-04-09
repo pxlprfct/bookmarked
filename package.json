@@ -63,6 +63,5 @@
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
-  },
-  "packageManager": "pnpm@6.32.2"
+  }
 }
