@@ -21,6 +21,7 @@ jobs:
       with:
         cache: "pnpm"
         registry-url: https://registry.npmjs.org
+        node-version: 16
 
     - name: Install dependencies
       run: pnpm install
@@ -33,6 +34,8 @@ jobs:
     
     - name: Publish to NPM
       if: ${{ success() }}
-      run: npm publish --access public
+      run: |
+        npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+        npm publish --ignore-scripts
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
