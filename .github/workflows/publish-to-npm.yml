@@ -12,14 +12,14 @@ jobs:
       with:
         fetch-depth: 0
 
+    - uses: pnpm/action-setup@v2.1.0
+      with:
+        version: latest
+
     - name: Setup node
       uses: actions/setup-node@v2
       with:
         cache: "pnpm"
-
-    - uses: pnpm/action-setup@v2.1.0
-      with:
-        version: latest
 
     - name: Install dependencies
       run: pnpm ci
