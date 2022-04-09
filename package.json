@@ -7,11 +7,12 @@
     "url": "https://github.com/pxlprfct/bookmarked/issues"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "@types/rimraf": "^3.0.2",
-    "@typescript-eslint/eslint-plugin": "^4.33.0",
-    "@typescript-eslint/parser": "^4.33.0",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@types/eslint": "^8.4.1",
+    "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/jest": "^27.4.1",
+    "@types/prettier": "^2.4.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",
@@ -26,10 +27,8 @@
     "lint-staged": "^10.5.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.6.2",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.70.1",
-    "rollup-plugin-typescript2": "^0.29.0",
     "ts-jest": "^26.5.6",
+    "tsup": "^5.12.4",
     "typescript": "^4.6.3"
   },
   "files": [
@@ -43,19 +42,27 @@
     "safari"
   ],
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
   "repository": {
     "type": "git",
     "url": "git+https://pxlprfct@github.com/pxlprfct/bookmarked.git"
   },
   "scripts": {
-    "build": "rimraf dist && rollup -c",
-    "lint": "eslint . --fix",
-    "start": "node dist/index.js",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "watch": "pnpm run build -- --watch src",
+    "prepublishOnly": "pnpm run build",
+    "lint": "eslint .",
     "test": "jest",
-    "test:watch": "jest --watchAll",
-    "watch": "rollup -cw"
+    "test:watch": "jest --watchAll"
   },
-  "types": "dist/index.d.ts"
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "packageManager": "pnpm@6.32.2"
 }
