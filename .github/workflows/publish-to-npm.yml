@@ -32,8 +32,9 @@ jobs:
     - name: Test
       run: pnpm run test
     
-    - name: Publish to NPM
-      if: ${{ success() }}
-      run: npm publish --access public
+    - name: Publish
+      run: |
+        npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
+        npm publish --ignore-scripts
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
