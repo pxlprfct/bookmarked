@@ -13,15 +13,25 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: actions/setup-node@v1
+
+    - uses: pnpm/action-setup@v2.1.0
       with:
-        node-version: '14.15.4'
+        version: latest
+
+    - name: Setup node
+      uses: actions/setup-node@v2
+      with:
+        cache: "pnpm"
+
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install
+
     - name: Build
-      run: npm run build --if-present
+      run: pnpm run build --if-present
+
     - name: Test
-      run: npm test
+      run: pnpm run test
+
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
