@@ -1,4 +1,4 @@
-import { Folder, Bookmark, FolderProperties } from './ts/types';
+import { Folder, Bookmark, FolderOrBookmarkProperties } from './ts/types';
 
 export const indentLeft = (indent: number): string => ' '.repeat(indent);
 
@@ -12,14 +12,15 @@ export const isEmpty = (variable: unknown): boolean =>
   Object.keys(variable as Record<string, string>).length === 0;
 
 export const hasProperties = (
-  properties?: Record<string, unknown> | FolderProperties,
-): boolean => isObject(properties) && !isEmpty(properties);
+  properties?: unknown,
+): properties is FolderOrBookmarkProperties =>
+  isObject(properties) && !isEmpty(properties);
 
-// "children" _only_ exists on folders
+// "children" property _only_ exists on folders
 export const isFolder = (variableToCheck: unknown): variableToCheck is Folder =>
   (variableToCheck as Folder).children !== undefined;
 
-// "href" _only_ exists on bookmarks
+// "href" property _only_ exists on bookmarks
 export const isBookmark = (
   variableToCheck: unknown,
 ): variableToCheck is Bookmark =>

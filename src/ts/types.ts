@@ -28,3 +28,5 @@ export interface FolderProperties extends Record {
   LAST_MODIFIED?: string;
   PERSONAL_TOOLBAR_FOLDER?: 'true' | 'false';
 }
+
+export type FolderOrBookmarkProperties = FolderProperties | BookmarkProperties;
