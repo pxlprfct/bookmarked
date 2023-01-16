@@ -13,6 +13,7 @@
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/jest": "^27.4.1",
     "@types/prettier": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",
@@ -31,9 +32,6 @@
     "tsup": "^5.12.4",
     "typescript": "^4.6.3"
   },
-  "files": [
-    "dist"
-  ],
   "homepage": "https://github.com/pxlprfct/bookmarked#readme",
   "keywords": [
     "bookmark",
@@ -47,21 +45,27 @@
     "url": "git+https://pxlprfct@github.com/pxlprfct/bookmarked.git"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
     "watch": "pnpm run build -- --watch src",
     "prepublishOnly": "pnpm run build",
     "lint": "eslint .",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.js",
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.26.0"
   }
 }
