@@ -4,7 +4,7 @@
   },
   "extends": [
     "airbnb-base",
-    "airbnb-typescript",
+    "airbnb-typescript/base",
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
@@ -69,10 +69,7 @@
       ".mjs",
       ".jsx",
       ".tsx"
-    ],
-    "react": {
-      "version": "detect"
-    }
+    ]
   },
   "ignorePatterns": [
     "jest.config.js",

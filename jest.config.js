@@ -5,18 +5,13 @@ module.exports = {
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.ts?$': 'ts-jest',
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
   testMatch: ['<rootDir>/**/src/(*.)test.(js|jsx|ts|tsx)'],
   testPathIgnorePatterns: ['<rootDir>/test/', '<rootDir>/dist/'],
-  globals: {
-    'ts-jest': {
-      babel: true,
-      tsconfig: 'tsconfig.json',
-    },
-  },
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts'],
   coverageThreshold: {
