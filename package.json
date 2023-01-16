@@ -48,9 +48,6 @@
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://pxlprfct@github.com/pxlprfct/bookmarked.git"
