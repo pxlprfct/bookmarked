@@ -7,6 +7,7 @@
     "url": "https://github.com/pxlprfct/bookmarked/issues"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.0",
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@types/eslint": "^8.4.10",
@@ -30,6 +31,13 @@
     "tsup": "^6.5.0",
     "typescript": "^4.9.4"
   },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "homepage": "https://github.com/pxlprfct/bookmarked#readme",
   "keywords": [
     "bookmark",
@@ -38,33 +46,23 @@
     "safari"
   ],
   "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://pxlprfct@github.com/pxlprfct/bookmarked.git"
   },
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
-    "watch": "pnpm run build -- --watch src",
-    "prepublishOnly": "pnpm run build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "prepublishOnly": "pnpm run build",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "watch": "pnpm run build -- --watch src"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@changesets/cli": "^2.26.0"
-  }
+  "types": "dist/index.d.ts"
 }
