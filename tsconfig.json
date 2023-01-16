@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "module": "es6",
-    "target": "ESNext",
+    "module": "CommonJS",
+    "target": "es2017",
     "noImplicitAny": true,
     "removeComments": true,
     "declaration": true,
@@ -11,8 +11,12 @@
     "rootDir": "src",
     "strict": true,
     "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
+    "noUncheckedIndexedAccess": true,
     "plugins": [
       {
         "name": "typescript-tslint-plugin"
