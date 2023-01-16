@@ -49,6 +49,7 @@
     "watch": "pnpm run build -- --watch src",
     "prepublishOnly": "pnpm run build",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
