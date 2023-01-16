@@ -1,5 +1,11 @@
 # bookmarked
 
+## 2.0.7
+
+### Patch Changes
+
+- 044232c: Validating internal changesets management
+
 ## 2.0.6
 
 ### Patch Changes
