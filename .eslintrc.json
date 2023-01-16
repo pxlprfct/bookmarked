@@ -1,9 +1,5 @@
 {
   "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true,
-    "jest": true,
     "node": true
   },
   "extends": [
@@ -14,12 +10,21 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": ["./tsconfig.json"]
+    "project": [
+      "./tsconfig.json"
+    ]
   },
-  "plugins": ["jsx-a11y", "import", "prettier", "@typescript-eslint"],
+  "plugins": [
+    "jsx-a11y",
+    "import",
+    "prettier",
+    "@typescript-eslint"
+  ],
   "root": true,
   "rules": {
-    "prettier/prettier": ["error"],
+    "prettier/prettier": [
+      "error"
+    ],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-object-literal-type-assertion": "off",
@@ -27,9 +32,13 @@
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["off"],
+    "@typescript-eslint/no-use-before-define": [
+      "off"
+    ],
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -45,13 +54,29 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".ts", ".jsx", ".tsx", ".json"]
+        "extensions": [
+          ".js",
+          ".ts",
+          ".jsx",
+          ".tsx",
+          ".json"
+        ]
       }
     },
-    "import/extensions": [".js", ".ts", ".mjs", ".jsx", ".tsx"],
+    "import/extensions": [
+      ".js",
+      ".ts",
+      ".mjs",
+      ".jsx",
+      ".tsx"
+    ],
     "react": {
-      "version": "latest"
+      "version": "detect"
     }
-  }, 
-  "ignorePatterns": ["rollup.config.js", "jest.config.js", "dist/**", "coverage"]
+  },
+  "ignorePatterns": [
+    "jest.config.js",
+    "dist/**",
+    "coverage"
+  ]
 }
