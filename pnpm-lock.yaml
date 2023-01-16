@@ -16,8 +16,6 @@ specifiers:
   eslint-plugin-import: ^2.27.5
   eslint-plugin-jsx-a11y: ^6.7.1
   eslint-plugin-prettier: ^4.2.1
-  eslint-plugin-react: ^7.32.1
-  eslint-plugin-react-hooks: ^4.6.0
   husky: ^8.0.3
   jest: ^29.3.1
   lint-staged: ^13.1.0
@@ -45,8 +43,6 @@ devDependencies:
   eslint-plugin-import: 2.27.5_2l6piu6guil2f63lj3qmhzbnn4
   eslint-plugin-jsx-a11y: 6.7.1_eslint@8.32.0
   eslint-plugin-prettier: 4.2.1_cn4lalcyadplruoxa5mhp7j3dq
-  eslint-plugin-react: 7.32.1_eslint@8.32.0
-  eslint-plugin-react-hooks: 4.6.0_eslint@8.32.0
   husky: 8.0.3
   jest: 29.3.1_zfha7dvnw4nti6zkbsmhmn6xo4
   lint-staged: 13.1.0
