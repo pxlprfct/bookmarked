@@ -10,11 +10,11 @@ const buildFolder = (folder: Folder) =>
 
 const addFolder = (folder: Folder, pad: string): string =>
   [
+    `${pad}<DT>`,
+    `${pad}  ${buildFolder(folder)}`,
+    `${pad}</DT>`,
     `${pad}<DL>`,
     `${pad}  <P>`,
-    `${pad}    <DT>`,
-    `${pad}      ${buildFolder(folder)}`,
-    `${pad}    </DT>`,
     // recursively call the build function
     // don't add any 'external' padding - the 'padding to be applied' needs to be the indent argument
     // TODO: using strings and numbers to determine padding feels off - decide on one or the other!
