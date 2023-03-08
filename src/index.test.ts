@@ -200,11 +200,11 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
         <H1>Bookmarks</H1>
         <DL>
           <P>
+            <DT>
+              <H3>Learn Programming</H3>
+            </DT>
             <DL>
               <P>
-                <DT>
-                  <H3>Learn Programming</H3>
-                </DT>
                 <DT>
                   <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                 </DT>
@@ -231,11 +231,11 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
         <H1>Bookmarks</H1>
         <DL>
           <P>
+            <DT>
+              <H3>Learn Programming</H3>
+            </DT>
             <DL>
               <P>
-                <DT>
-                  <H3>Learn Programming</H3>
-                </DT>
                 <DT>
                   <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                 </DT>
@@ -263,16 +263,16 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
         <H1>Bookmarks</H1>
         <DL>
           <P>
+            <DT>
+              <H3>Programming</H3>
+            </DT>
             <DL>
               <P>
                 <DT>
-                  <H3>Programming</H3>
+                  <H3>Learn Programming</H3>
                 </DT>
                 <DL>
                   <P>
-                    <DT>
-                      <H3>Learn Programming</H3>
-                    </DT>
                     <DT>
                       <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                     </DT>
@@ -281,11 +281,11 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
                     </DT>
                   </P>
                 </DL>
+                <DT>
+                  <H3>JavaScript</H3>
+                </DT>
                 <DL>
                   <P>
-                    <DT>
-                      <H3>JavaScript</H3>
-                    </DT>
                     <DT>
                       <A HREF="https://www.npmjs.com/">npm</A>
                     </DT>
@@ -310,11 +310,11 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           <H1>Bookmarks</H1>
           <DL>
             <P>
+              <DT>
+                <H3 ADD_DATE="1609459200000">Learn Programming</H3>
+              </DT>
               <DL>
                 <P>
-                  <DT>
-                    <H3 ADD_DATE="1609459200000">Learn Programming</H3>
-                  </DT>
                   <DT>
                     <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                   </DT>
@@ -340,11 +340,11 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           <H1>Bookmarks</H1>
           <DL>
             <P>
+              <DT>
+                <H3 ADD_DATE="1609459200000" LAST_MODIFIED="1609459200000">Learn Programming</H3>
+              </DT>
               <DL>
                 <P>
-                  <DT>
-                    <H3 ADD_DATE="1609459200000" LAST_MODIFIED="1609459200000">Learn Programming</H3>
-                  </DT>
                   <DT>
                     <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                   </DT>
@@ -369,11 +369,11 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           <H1>Bookmarks</H1>
           <DL>
             <P>
+              <DT>
+                <H3>Learn Programming</H3>
+              </DT>
               <DL>
                 <P>
-                  <DT>
-                    <H3>Learn Programming</H3>
-                  </DT>
                   <DT>
                     <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                   </DT>
@@ -399,11 +399,11 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           <H1>Bookmarks</H1>
           <DL>
             <P>
+              <DT>
+                <H3>Learn Programming</H3>
+              </DT>
               <DL>
                 <P>
-                  <DT>
-                    <H3>Learn Programming</H3>
-                  </DT>
                   <DT>
                     <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                   </DT>
@@ -429,11 +429,11 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           <H1>Bookmarks</H1>
           <DL>
             <P>
+              <DT>
+                <H3 FOO="BAR">Learn Programming</H3>
+              </DT>
               <DL>
                 <P>
-                  <DT>
-                    <H3 FOO="BAR">Learn Programming</H3>
-                  </DT>
                   <DT>
                     <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                   </DT>
@@ -461,22 +461,22 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
         <H1>Bookmarks</H1>
         <DL>
           <P>
+            <DT>
+              <H3>Learn Programming</H3>
+            </DT>
             <DL>
               <P>
-                <DT>
-                  <H3>Learn Programming</H3>
-                </DT>
                 <DT>
                   <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                 </DT>
                 <DT>
                   <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                 </DT>
+                <DT>
+                  <H3>Coding Resources</H3>
+                </DT>
                 <DL>
                   <P>
-                    <DT>
-                      <H3>Coding Resources</H3>
-                    </DT>
                     <DT>
                       <A HREF="https://www.smashingmagazine.com/">smashingmagazine</A>
                     </DT>
@@ -504,22 +504,22 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
         <H1>Bookmarks</H1>
         <DL>
           <P>
+            <DT>
+              <H3>Learn Programming</H3>
+            </DT>
             <DL>
               <P>
-                <DT>
-                  <H3>Learn Programming</H3>
-                </DT>
                 <DT>
                   <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
                 </DT>
                 <DT>
                   <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                 </DT>
+                <DT>
+                  <H3>Coding Resources</H3>
+                </DT>
                 <DL>
                   <P>
-                    <DT>
-                      <H3>Coding Resources</H3>
-                    </DT>
                     <DT>
                       <A HREF="https://www.smashingmagazine.com/">smashingmagazine</A>
                     </DT>
@@ -530,11 +530,11 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
                 </DL>
               </P>
             </DL>
+            <DT>
+              <H3>JavaScript</H3>
+            </DT>
             <DL>
               <P>
-                <DT>
-                  <H3>JavaScript</H3>
-                </DT>
                 <DT>
                   <A HREF="https://www.npmjs.com/">npm</A>
                 </DT>
