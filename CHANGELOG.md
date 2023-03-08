@@ -1,5 +1,11 @@
 # bookmarked
 
+## 3.0.0
+
+### Major Changes
+
+- f92a762: - Fixed formatting with bookmark inside folder [#32](https://github.com/pxlprfct/bookmarked/issues/32)
+
 ## 2.0.7
 
 ### Patch Changes
