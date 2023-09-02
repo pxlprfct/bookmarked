@@ -1,5 +1,13 @@
 # bookmarked
 
+## 3.0.1
+
+### Patch Changes
+
+- 114dbe2: Added vitest and dropped jest
+- 89043ca: Updated release process
+- 537a31a: Reformatted readme.md
+
 ## 3.0.0
 
 ### Major Changes
