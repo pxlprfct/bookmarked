@@ -61,10 +61,7 @@
     "test:coverage": "vitest --coverage",
     "test:ui": "vitest --ui",
     "watch": "pnpm run build -- --watch src",
-    "release": "pnpm publish -r"
-  },
-  "engines": {
-    "node": ">=18"
+    "release": "changeset publish"
   },
   "packageManager": "pnpm@8.7.0",
   "types": "dist/index.d.ts"
