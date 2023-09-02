@@ -6,6 +6,9 @@
   "bugs": {
     "url": "https://github.com/pxlprfct/bookmarked/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.7.1",
@@ -60,10 +63,11 @@
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "test:ui": "vitest --ui",
-    "watch": "pnpm run build -- --watch src"
+    "watch": "pnpm run build -- --watch src",
+    "release": "changeset publish"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=16"
   },
   "packageManager": "pnpm@8.7.0",
   "types": "dist/index.d.ts"
