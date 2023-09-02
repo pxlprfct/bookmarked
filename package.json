@@ -64,5 +64,8 @@
     "release": "changeset publish"
   },
   "packageManager": "pnpm@8.7.0",
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  }
 }
