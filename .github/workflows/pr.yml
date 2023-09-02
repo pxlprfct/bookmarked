@@ -1,15 +1,12 @@
-name: Release
+name: PR
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
 jobs:
-  release:
-    name: Release
+  ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -17,17 +14,30 @@ jobs:
 
       - name: Setup Action
         uses: pnpm/action-setup@v2
-        with:
-          version: 7
 
-      - name: Setup Node.js 16.x
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version-file: '.nvmrc'
           cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Test
+        run: pnpm run test
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
