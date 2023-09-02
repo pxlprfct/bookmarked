@@ -1,12 +1,15 @@
-name: PR
+name: Release
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
-  ci:
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -23,17 +26,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint
-        run: pnpm run lint
 
-      - name: Build
-        run: pnpm run build
-
-      - name: Test
-        run: pnpm run test
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
