@@ -1,5 +1,8 @@
 # `bookmarked` 🔖
-![GitHub](https://img.shields.io/github/license/pxlprfct/bookmarked)  ![npm](https://img.shields.io/npm/v/bookmarked) ![CI/CD](https://github.com/pxlprfct/bookmarked/workflows/CI/CD/badge.svg?branch=main)
+
+![GitHub](https://img.shields.io/github/license/pxlprfct/bookmarked)
+![npm](https://img.shields.io/npm/v/bookmarked)
+![CI/CD](https://github.com/pxlprfct/bookmarked/workflows/CI/CD/badge.svg?branch=main)
 
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=coverage)](https://sonarcloud.io/dashboard?id=bookmarked)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=ncloc)](https://sonarcloud.io/dashboard?id=bookmarked)
@@ -7,30 +10,34 @@
 
 A tiny (dependency free!) library for building bookmark files.
 
-`bookmarked` supports ES Modules (ESM), CommonJS (CJS), and the Universal Module Definition (UMD) - so it'll be wherever you need it.
+`bookmarked` supports ES Modules (ESM) and CommonJS (CJS) - so it'll be wherever
+you need it.
 
 ## How to install
+
 ```sh
 $ npm i bookmarked
 ```
 
 ## How to use
+
 ### Single level deep bookmarks
+
 ```ts
-import { bookmarked } from 'bookmarked';
+import { bookmarked } from "bookmarked";
 
 const bookmarks = [
   {
-    href: 'https://www.blackgirlscode.com/',
-    name: 'Black Girls Code, BlackGirlsCode, Women of Color in Technology',
+    href: "https://www.blackgirlscode.com/",
+    name: "Black Girls Code, BlackGirlsCode, Women of Color in Technology",
   },
   {
-    href: 'https://www.freecodecamp.org/',
-    name: 'Learn to Code — For Free — Coding Courses for Busy People',
+    href: "https://www.freecodecamp.org/",
+    name: "Learn to Code — For Free — Coding Courses for Busy People",
   },
 ];
 
-const html = bookmarked(bookmarks)
+const html = bookmarked(bookmarks);
 ```
 
 ```html
@@ -54,18 +61,19 @@ const html = bookmarked(bookmarks)
 ```
 
 ### Bookmarks inside folders
+
 ```ts
 [
   {
-    name: 'Learn to code',
+    name: "Learn to code",
     children: [
       {
-        href: 'https://www.blackgirlscode.com/',
-        name: 'Black Girls Code, BlackGirlsCode, Women of Color in Technology',
+        href: "https://www.blackgirlscode.com/",
+        name: "Black Girls Code, BlackGirlsCode, Women of Color in Technology",
       },
       {
-        href: 'https://www.freecodecamp.org/',
-        name: 'Learn to Code — For Free — Coding Courses for Busy People',
+        href: "https://www.freecodecamp.org/",
+        name: "Learn to Code — For Free — Coding Courses for Busy People",
       },
     ],
   },
@@ -94,35 +102,38 @@ const html = bookmarked(bookmarks)
 ```
 
 ### Folders inside folders
+
 ```ts
 [
   {
-    name: 'Programming',
+    name: "Programming",
     children: [
       {
-        name: 'Learn Programming',
+        name: "Learn Programming",
         children: [
           {
-            href: 'https://www.blackgirlscode.com/',
-            name: 'Black Girls Code, BlackGirlsCode, Women of Color in Technology'
+            href: "https://www.blackgirlscode.com/",
+            name:
+              "Black Girls Code, BlackGirlsCode, Women of Color in Technology",
           },
           {
-            href: 'https://www.freecodecamp.org/',
-            name: 'Learn to Code — For Free — Coding Courses for Busy People'
-          }
-        ]
+            href: "https://www.freecodecamp.org/",
+            name: "Learn to Code — For Free — Coding Courses for Busy People",
+          },
+        ],
       },
       {
-        name: 'JavaScript',
+        name: "JavaScript",
         children: [
-          { 
-            href: 'https://www.npmjs.com/', name: 'npm'
-          }
-        ]
-      }
-    ]
-  }
-]
+          {
+            href: "https://www.npmjs.com/",
+            name: "npm",
+          },
+        ],
+      },
+    ],
+  },
+];
 ```
 
 ```html
@@ -163,4 +174,6 @@ const html = bookmarked(bookmarks)
 </DL>
 ```
 
-Check out the [test file](https://github.com/pxlprfct/bookmarked/blob/main/src/index.test.ts) for more examples
+Check out the
+[test file](https://github.com/pxlprfct/bookmarked/blob/main/src/index.test.ts)
+for more examples
