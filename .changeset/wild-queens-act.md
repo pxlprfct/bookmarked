@@ -1,5 +1,0 @@
----
-'bookmarked': patch
----
-
-Minified build

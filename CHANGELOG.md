@@ -1,5 +1,11 @@
 # bookmarked
 
+## 3.0.3
+
+### Patch Changes
+
+- 76c919d: Minified build
+
 ## 3.0.2
 
 ### Patch Changes
