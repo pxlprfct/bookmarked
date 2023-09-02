@@ -54,7 +54,7 @@
     "url": "git+https://pxlprfct@github.com/pxlprfct/bookmarked.git"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "tsup src/index.ts --format cjs,esm --dts --minify",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "vitest",
