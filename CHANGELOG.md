@@ -1,5 +1,11 @@
 # bookmarked
 
+## 3.0.8
+
+### Patch Changes
+
+- 7504688: exported internal types
+
 ## 3.0.7
 
 ### Patch Changes
