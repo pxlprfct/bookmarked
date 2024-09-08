@@ -1,4 +1,4 @@
-import { Bookmark } from '../../../ts/types';
+import type { Bookmark } from '../../../ts/types';
 
 export const BLACK_GIRLS_CODE: Bookmark = {
   href: 'https://www.blackgirlscode.com/',

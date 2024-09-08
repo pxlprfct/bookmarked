@@ -4,7 +4,6 @@
     "skipLibCheck": true,
     "target": "es2022",
     "allowJs": true,
-    "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
@@ -16,8 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "noImplicitAny": true,
-    "module": "NodeNext",
-    "allowImportingTsExtensions": true,
+    "moduleResolution": "Bundler",
     "plugins": [
       {
         "name": "typescript-tslint-plugin"

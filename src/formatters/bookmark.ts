@@ -1,5 +1,5 @@
-import addProperties from './properties.ts';
-import type { Bookmark } from '../ts/types.ts';
+import addProperties from './properties';
+import type { Bookmark } from '../ts/types';
 
 const buildBookmark = (bookmark: Bookmark) =>
   `<A HREF="${bookmark.href}"` +

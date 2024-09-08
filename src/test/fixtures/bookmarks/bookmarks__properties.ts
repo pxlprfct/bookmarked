@@ -1,4 +1,4 @@
-import { Bookmark } from '../../../ts/types';
+import type { Bookmark } from '../../../ts/types';
 import { BLACK_GIRLS_CODE } from './bookmarks';
 
 export const BOOKMARK_WITH_DATE_ADDED: Bookmark = {

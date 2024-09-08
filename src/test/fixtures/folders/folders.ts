@@ -1,4 +1,4 @@
-import { Folder } from '../../../ts/types';
+import type { Folder } from '../../../ts/types';
 import {
   BLACK_GIRLS_CODE,
   FREE_CODE_CAMP,

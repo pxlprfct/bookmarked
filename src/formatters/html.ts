@@ -1,8 +1,8 @@
-import addBookmark from './bookmark.ts';
-import { indentLeft, isBookmark, isFolder } from '../utils.ts';
-import type { Bookmark, Folder } from '../ts/types.ts';
-import { DEFAULT_AMOUNT_TO_PAD_BY } from '../constants.ts';
-import addProperties from './properties.ts';
+import addBookmark from './bookmark';
+import { indentLeft, isBookmark, isFolder } from '../utils';
+import type { Bookmark, Folder } from '../ts/types';
+import { DEFAULT_AMOUNT_TO_PAD_BY } from '../constants';
+import addProperties from './properties';
 
 const buildFolder = (folder: Folder) =>
   `<H3` + `${addProperties(folder.properties)}` + `>${folder.name}</H3>`;
