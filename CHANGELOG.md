@@ -1,5 +1,11 @@
 # bookmarked
 
+## 3.0.6
+
+### Patch Changes
+
+- 9bba888: Internal update
+
 ## 3.0.5
 
 ### Patch Changes
