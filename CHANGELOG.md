@@ -1,5 +1,11 @@
 # bookmarked
 
+## 3.0.4
+
+### Patch Changes
+
+- a5c08c1: updated internal tooling
+
 ## 3.0.3
 
 ### Patch Changes
