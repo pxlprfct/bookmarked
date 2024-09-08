@@ -46,7 +46,7 @@ const html = bookmarked(bookmarks);
 <DL>
   <P>
     <DT>
-      <A HREF="https://codebar.io/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+      <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
     </DT>
     <DT>
       <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
@@ -64,7 +64,7 @@ const html = bookmarked(bookmarks);
     children: [
       {
         href: "https://codebar.io/",
-        name: "Black Girls Code, BlackGirlsCode, Women of Color in Technology",
+        name: "Making tech more diverse and welcoming by bringing people together and helping teach programming skills.",
       },
       {
         href: "https://www.freecodecamp.org/",
@@ -85,7 +85,7 @@ const html = bookmarked(bookmarks);
     <DL>
       <P>
         <DT>
-          <A HREF="https://codebar.io/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+          <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
         </DT>
         <DT>
           <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
@@ -109,7 +109,7 @@ const html = bookmarked(bookmarks);
           {
             href: "https://codebar.io/",
             name:
-              "Black Girls Code, BlackGirlsCode, Women of Color in Technology",
+              "Making tech more diverse and welcoming by bringing people together and helping teach programming skills.",
           },
           {
             href: "https://www.freecodecamp.org/",
@@ -146,7 +146,7 @@ const html = bookmarked(bookmarks);
         <DL>
           <P>
             <DT>
-              <A HREF="https://codebar.io/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+              <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
             </DT>
             <DT>
               <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
