@@ -1,5 +1,11 @@
 # bookmarked
 
+## 3.0.5
+
+### Patch Changes
+
+- 5f8a6eb: updated readme
+
 ## 3.0.4
 
 ### Patch Changes
