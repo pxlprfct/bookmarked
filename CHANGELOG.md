@@ -1,5 +1,11 @@
 # bookmarked
 
+## 3.0.7
+
+### Patch Changes
+
+- d518774: Internal update
+
 ## 3.0.6
 
 ### Patch Changes
