@@ -1,8 +1,8 @@
-import { Bookmark } from '../../../ts/types';
-import { BLACK_GIRLS_CODE } from './bookmarks';
+import type { Bookmark } from '../../../ts/types';
+import { CODEBAR } from './bookmarks';
 
 export const BOOKMARK_WITH_DATE_ADDED: Bookmark = {
-  ...BLACK_GIRLS_CODE,
+  ...CODEBAR,
   properties: {
     ADD_DATE: '1612002291',
   },
@@ -17,18 +17,18 @@ export const BOOKMARK_WITH_MULTIPLE_PROPERTIES: Bookmark = {
 };
 
 export const BOOKMARK_WITH_EMPTY_PROPERTIES: Bookmark = {
-  ...BLACK_GIRLS_CODE,
+  ...CODEBAR,
   properties: {},
 };
 
 export const BOOKMARK_WITHOUT_PROPERTIES: Bookmark = (() => {
-  const BOOKMARK = BLACK_GIRLS_CODE;
+  const BOOKMARK = CODEBAR;
   delete BOOKMARK.properties;
   return BOOKMARK;
 })();
 
 export const BOOKMARK_WITH_CUSTOM_PROPERTIES: Bookmark = {
-  ...BLACK_GIRLS_CODE,
+  ...CODEBAR,
   properties: {
     foo: 'bar',
   },

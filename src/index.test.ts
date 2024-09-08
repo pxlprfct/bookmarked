@@ -3,7 +3,7 @@ import BOOKMARKS from './test/fixtures/bookmarks/index';
 import FOLDERS from './test/fixtures/folders/index';
 
 const {
-  BLACK_GIRLS_CODE,
+  CODEBAR,
   FREE_CODE_CAMP,
   THE_NICEST_PLACE,
   BOOKMARK_WITH_DATE_ADDED,
@@ -32,7 +32,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
       <!-- This is an automatically generated file.
            It will be read and overwritten.
            DO NOT EDIT! -->
-      <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+      <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
       <TITLE>Bookmarks</TITLE>
       <H1>Bookmarks</H1>
       <DL>
@@ -45,18 +45,18 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
 
   describe('Generating bookmarks', () => {
     it('should generate a single bookmark', () => {
-      expect(bookmarked([BLACK_GIRLS_CODE])).toMatchInlineSnapshot(`
+      expect(bookmarked([CODEBAR])).toMatchInlineSnapshot(`
         "<!DOCTYPE NETSCAPE-Bookmark-file-1>
         <!-- This is an automatically generated file.
              It will be read and overwritten.
              DO NOT EDIT! -->
-        <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
         <TITLE>Bookmarks</TITLE>
         <H1>Bookmarks</H1>
         <DL>
           <P>
             <DT>
-              <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+              <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
             </DT>
           </P>
         </DL>"
@@ -64,22 +64,21 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
     });
 
     it('should generate multiple bookmarks', () => {
-      expect(bookmarked([BLACK_GIRLS_CODE, FREE_CODE_CAMP]))
-        .toMatchInlineSnapshot(`
+      expect(bookmarked([CODEBAR, FREE_CODE_CAMP])).toMatchInlineSnapshot(`
           "<!DOCTYPE NETSCAPE-Bookmark-file-1>
           <!-- This is an automatically generated file.
                It will be read and overwritten.
                DO NOT EDIT! -->
-          <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+          <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
           <TITLE>Bookmarks</TITLE>
           <H1>Bookmarks</H1>
           <DL>
             <P>
               <DT>
-                <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
               </DT>
               <DT>
-                <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
               </DT>
             </P>
           </DL>"
@@ -93,13 +92,13 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           <!-- This is an automatically generated file.
                It will be read and overwritten.
                DO NOT EDIT! -->
-          <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+          <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
           <TITLE>Bookmarks</TITLE>
           <H1>Bookmarks</H1>
           <DL>
             <P>
               <DT>
-                <A HREF=\\"https://www.blackgirlscode.com/\\" ADD_DATE=\\"1612002291\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                <A HREF="https://codebar.io/" ADD_DATE="1612002291">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
               </DT>
             </P>
           </DL>"
@@ -113,13 +112,13 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <!-- This is an automatically generated file.
                  It will be read and overwritten.
                  DO NOT EDIT! -->
-            <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+            <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
             <TITLE>Bookmarks</TITLE>
             <H1>Bookmarks</H1>
             <DL>
               <P>
                 <DT>
-                  <A HREF=\\"https://www.blackgirlscode.com/\\" ADD_DATE=\\"1612002291\\" ICON=\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAB20lEQVQ4jX2STWsTURSG33PuzORjTPNRPwk0mBbduBC0rQ0utIKKi0LVkoVCFfwxoqj/QuwfcBF0VWLqqgh1kXSSUrWQhdRSUsnMnXuvi0nDRKJnde7hvdz3PO8lHBcRMXPUa62HQyLSWhtjMLYINJSOFQgAzGyMuXHr9utXL0647uLizU5724Acx7k6O19defB1ayuQMrpgASBiQGeyueXl+45lHfX7d+7ec1MJsPiyufn4ydO5K5erj1aZhdZKACCCMaZYLIbS/9Ro9Pt+EPjbrabntT3P63a7e3s/Pm9sBFL+y+f/SsRXnJ1fqK48dBynVJra3f02c+Hi9cpCs9USQgwpxZ4Q9odabafdOnn6rJJ+qDQzsRDZieybl8/f1z4KIZRSA/DMBCXX1+vT5XKjXmeyM+nU2ts1GahCvpCw7Rj3eMfEtqWkFJYFbRRpAdbhSGoivlCFSkoFBXLPhSmtzTVd9HU4ifR55HvwA2iKchBgBf0Mc0u6vIPDS+YUCB1zMI3JQ/zOIU0Il/BuYD5mic7AbeJnEnbfSBc2w/QQhNA9yDySkWYkiAqmvuMXQUzA7uJoBoU29jNI5JDsYP8A/oiaRiH8dRxDCQCDDEz0YQ3AgD5WGAxI/QE3YLsLjXdTWwAAAABJRU5ErkJggg==\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                  <A HREF="https://codebar.io/" ADD_DATE="1612002291" ICON="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAB20lEQVQ4jX2STWsTURSG33PuzORjTPNRPwk0mBbduBC0rQ0utIKKi0LVkoVCFfwxoqj/QuwfcBF0VWLqqgh1kXSSUrWQhdRSUsnMnXuvi0nDRKJnde7hvdz3PO8lHBcRMXPUa62HQyLSWhtjMLYINJSOFQgAzGyMuXHr9utXL0647uLizU5724Acx7k6O19defB1ayuQMrpgASBiQGeyueXl+45lHfX7d+7ec1MJsPiyufn4ydO5K5erj1aZhdZKACCCMaZYLIbS/9Ro9Pt+EPjbrabntT3P63a7e3s/Pm9sBFL+y+f/SsRXnJ1fqK48dBynVJra3f02c+Hi9cpCs9USQgwpxZ4Q9odabafdOnn6rJJ+qDQzsRDZieybl8/f1z4KIZRSA/DMBCXX1+vT5XKjXmeyM+nU2ts1GahCvpCw7Rj3eMfEtqWkFJYFbRRpAdbhSGoivlCFSkoFBXLPhSmtzTVd9HU4ifR55HvwA2iKchBgBf0Mc0u6vIPDS+YUCB1zMI3JQ/zOIU0Il/BuYD5mic7AbeJnEnbfSBc2w/QQhNA9yDySkWYkiAqmvuMXQUzA7uJoBoU29jNI5JDsYP8A/oiaRiH8dRxDCQCDDEz0YQ3AgD5WGAxI/QE3YLsLjXdTWwAAAABJRU5ErkJggg==">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                 </DT>
               </P>
             </DL>"
@@ -133,13 +132,13 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <!-- This is an automatically generated file.
                  It will be read and overwritten.
                  DO NOT EDIT! -->
-            <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+            <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
             <TITLE>Bookmarks</TITLE>
             <H1>Bookmarks</H1>
             <DL>
               <P>
                 <DT>
-                  <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                  <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                 </DT>
               </P>
             </DL>"
@@ -153,13 +152,13 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <!-- This is an automatically generated file.
                  It will be read and overwritten.
                  DO NOT EDIT! -->
-            <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+            <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
             <TITLE>Bookmarks</TITLE>
             <H1>Bookmarks</H1>
             <DL>
               <P>
                 <DT>
-                  <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                  <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                 </DT>
               </P>
             </DL>"
@@ -173,13 +172,13 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <!-- This is an automatically generated file.
                  It will be read and overwritten.
                  DO NOT EDIT! -->
-            <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+            <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
             <TITLE>Bookmarks</TITLE>
             <H1>Bookmarks</H1>
             <DL>
               <P>
                 <DT>
-                  <A HREF=\\"https://www.blackgirlscode.com/\\" foo=\\"bar\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                  <A HREF="https://codebar.io/" foo="bar">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                 </DT>
               </P>
             </DL>"
@@ -195,7 +194,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
         <!-- This is an automatically generated file.
              It will be read and overwritten.
              DO NOT EDIT! -->
-        <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
         <TITLE>Bookmarks</TITLE>
         <H1>Bookmarks</H1>
         <DL>
@@ -206,10 +205,10 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <DL>
               <P>
                 <DT>
-                  <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                  <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                 </DT>
                 <DT>
-                  <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                  <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                 </DT>
               </P>
             </DL>
@@ -226,7 +225,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
         <!-- This is an automatically generated file.
              It will be read and overwritten.
              DO NOT EDIT! -->
-        <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
         <TITLE>Bookmarks</TITLE>
         <H1>Bookmarks</H1>
         <DL>
@@ -237,15 +236,15 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <DL>
               <P>
                 <DT>
-                  <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                  <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                 </DT>
                 <DT>
-                  <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                  <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                 </DT>
               </P>
             </DL>
             <DT>
-              <A HREF=\\"https://thenicestplace.net/\\">The Nicest Place on the Internet</A>
+              <A HREF="https://thenicestplace.net/">The Nicest Place on the Internet</A>
             </DT>
           </P>
         </DL>"
@@ -258,7 +257,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
         <!-- This is an automatically generated file.
              It will be read and overwritten.
              DO NOT EDIT! -->
-        <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
         <TITLE>Bookmarks</TITLE>
         <H1>Bookmarks</H1>
         <DL>
@@ -274,10 +273,10 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
                 <DL>
                   <P>
                     <DT>
-                      <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                      <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                     </DT>
                     <DT>
-                      <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                      <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                     </DT>
                   </P>
                 </DL>
@@ -287,7 +286,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
                 <DL>
                   <P>
                     <DT>
-                      <A HREF=\\"https://www.npmjs.com/\\">npm</A>
+                      <A HREF="https://www.npmjs.com/">npm</A>
                     </DT>
                   </P>
                 </DL>
@@ -305,21 +304,21 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           <!-- This is an automatically generated file.
                It will be read and overwritten.
                DO NOT EDIT! -->
-          <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+          <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
           <TITLE>Bookmarks</TITLE>
           <H1>Bookmarks</H1>
           <DL>
             <P>
               <DT>
-                <H3 ADD_DATE=\\"1609459200000\\">Learn Programming</H3>
+                <H3 ADD_DATE="1609459200000">Learn Programming</H3>
               </DT>
               <DL>
                 <P>
                   <DT>
-                    <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                    <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                   </DT>
                   <DT>
-                    <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                    <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                   </DT>
                 </P>
               </DL>
@@ -335,21 +334,21 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <!-- This is an automatically generated file.
                  It will be read and overwritten.
                  DO NOT EDIT! -->
-            <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+            <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
             <TITLE>Bookmarks</TITLE>
             <H1>Bookmarks</H1>
             <DL>
               <P>
                 <DT>
-                  <H3 ADD_DATE=\\"1609459200000\\" LAST_MODIFIED=\\"1609459200000\\">Learn Programming</H3>
+                  <H3 ADD_DATE="1609459200000" LAST_MODIFIED="1609459200000">Learn Programming</H3>
                 </DT>
                 <DL>
                   <P>
                     <DT>
-                      <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                      <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                     </DT>
                     <DT>
-                      <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                      <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                     </DT>
                   </P>
                 </DL>
@@ -364,7 +363,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           <!-- This is an automatically generated file.
                It will be read and overwritten.
                DO NOT EDIT! -->
-          <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+          <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
           <TITLE>Bookmarks</TITLE>
           <H1>Bookmarks</H1>
           <DL>
@@ -375,10 +374,10 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
               <DL>
                 <P>
                   <DT>
-                    <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                    <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                   </DT>
                   <DT>
-                    <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                    <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                   </DT>
                 </P>
               </DL>
@@ -394,7 +393,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <!-- This is an automatically generated file.
                  It will be read and overwritten.
                  DO NOT EDIT! -->
-            <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+            <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
             <TITLE>Bookmarks</TITLE>
             <H1>Bookmarks</H1>
             <DL>
@@ -405,10 +404,10 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
                 <DL>
                   <P>
                     <DT>
-                      <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                      <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                     </DT>
                     <DT>
-                      <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                      <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                     </DT>
                   </P>
                 </DL>
@@ -424,21 +423,21 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <!-- This is an automatically generated file.
                  It will be read and overwritten.
                  DO NOT EDIT! -->
-            <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+            <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
             <TITLE>Bookmarks</TITLE>
             <H1>Bookmarks</H1>
             <DL>
               <P>
                 <DT>
-                  <H3 FOO=\\"BAR\\">Learn Programming</H3>
+                  <H3 FOO="BAR">Learn Programming</H3>
                 </DT>
                 <DL>
                   <P>
                     <DT>
-                      <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                      <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                     </DT>
                     <DT>
-                      <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                      <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                     </DT>
                   </P>
                 </DL>
@@ -456,7 +455,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
         <!-- This is an automatically generated file.
              It will be read and overwritten.
              DO NOT EDIT! -->
-        <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+        <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
         <TITLE>Bookmarks</TITLE>
         <H1>Bookmarks</H1>
         <DL>
@@ -467,10 +466,10 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
             <DL>
               <P>
                 <DT>
-                  <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                  <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                 </DT>
                 <DT>
-                  <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                  <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                 </DT>
                 <DT>
                   <H3>Coding Resources</H3>
@@ -478,10 +477,10 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
                 <DL>
                   <P>
                     <DT>
-                      <A HREF=\\"https://www.smashingmagazine.com/\\">smashingmagazine</A>
+                      <A HREF="https://www.smashingmagazine.com/">smashingmagazine</A>
                     </DT>
                     <DT>
-                      <A HREF=\\"https://developer.mozilla.org/en-US/\\">MDN Web Docs</A>
+                      <A HREF="https://developer.mozilla.org/en-US/">MDN Web Docs</A>
                     </DT>
                   </P>
                 </DL>
@@ -499,7 +498,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           <!-- This is an automatically generated file.
                It will be read and overwritten.
                DO NOT EDIT! -->
-          <META HTTP-EQUIV=\\"Content-Type\\" CONTENT=\\"text/html; charset=UTF-8\\">
+          <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
           <TITLE>Bookmarks</TITLE>
           <H1>Bookmarks</H1>
           <DL>
@@ -510,10 +509,10 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
               <DL>
                 <P>
                   <DT>
-                    <A HREF=\\"https://www.blackgirlscode.com/\\">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+                    <A HREF="https://codebar.io/">Making tech more diverse and welcoming by bringing people together and helping teach programming skills.</A>
                   </DT>
                   <DT>
-                    <A HREF=\\"https://www.freecodecamp.org/\\">Learn to Code — For Free — Coding Courses for Busy People</A>
+                    <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
                   </DT>
                   <DT>
                     <H3>Coding Resources</H3>
@@ -521,10 +520,10 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
                   <DL>
                     <P>
                       <DT>
-                        <A HREF=\\"https://www.smashingmagazine.com/\\">smashingmagazine</A>
+                        <A HREF="https://www.smashingmagazine.com/">smashingmagazine</A>
                       </DT>
                       <DT>
-                        <A HREF=\\"https://developer.mozilla.org/en-US/\\">MDN Web Docs</A>
+                        <A HREF="https://developer.mozilla.org/en-US/">MDN Web Docs</A>
                       </DT>
                     </P>
                   </DL>
@@ -536,7 +535,7 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
               <DL>
                 <P>
                   <DT>
-                    <A HREF=\\"https://www.npmjs.com/\\">npm</A>
+                    <A HREF="https://www.npmjs.com/">npm</A>
                   </DT>
                 </P>
               </DL>
