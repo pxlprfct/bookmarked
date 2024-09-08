@@ -1,7 +1,10 @@
-name: ci
+name: pr
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
