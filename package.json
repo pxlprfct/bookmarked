@@ -46,6 +46,7 @@
   "repository": "pxlprfct/bookmarked.git",
   "scripts": {
     "build": "tsup",
+    "changeset": "changeset",
     "dev": "vitest",
     "exports": "attw --pack .",
     "format": "prettier --check .",
