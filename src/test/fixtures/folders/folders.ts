@@ -1,6 +1,6 @@
 import type { Folder } from '../../../ts/types';
 import {
-  BLACK_GIRLS_CODE,
+  CODEBAR,
   FREE_CODE_CAMP,
   NPM,
   SMASHING_MAGAZINE,
@@ -9,7 +9,7 @@ import {
 
 export const LEARN_PROGRAMMING_FOLDER: Folder = {
   name: 'Learn Programming',
-  children: [BLACK_GIRLS_CODE, FREE_CODE_CAMP],
+  children: [CODEBAR, FREE_CODE_CAMP],
 };
 
 export const JAVASCRIPT_FOLDER: Folder = {
@@ -32,14 +32,14 @@ export const CODING_RESOURCES_FOLDER: Folder = {
 export const DOUBLE_NESTED_FOLDERS = [
   {
     name: 'Learn Programming',
-    children: [BLACK_GIRLS_CODE, FREE_CODE_CAMP, CODING_RESOURCES_FOLDER],
+    children: [CODEBAR, FREE_CODE_CAMP, CODING_RESOURCES_FOLDER],
   },
 ];
 
 export const DOUBLE_NESTED_FOLDERS_AND_SINGLE_FOLDER = [
   {
     name: 'Learn Programming',
-    children: [BLACK_GIRLS_CODE, FREE_CODE_CAMP, CODING_RESOURCES_FOLDER],
+    children: [CODEBAR, FREE_CODE_CAMP, CODING_RESOURCES_FOLDER],
   },
   JAVASCRIPT_FOLDER,
 ];
