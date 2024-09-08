@@ -2,11 +2,10 @@
   "name": "bookmarked",
   "description": "A tiny (dependency free!) library for building bookmark files.",
   "version": "3.0.3",
-  "author": "Ollie Williams <hey@ollie.work>",
-  "bugs": {
-    "url": "https://github.com/pxlprfct/bookmarked/issues"
-  },
+  "author": "Ollie Williams",
+  "bugs": "https://github.com/pxlprfct/bookmarked/issues",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.1",
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
@@ -28,17 +27,21 @@
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
+    "syncpack": "^13.0.0",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.3"
   },
   "exports": {
+    "./package.json": "./package.json",
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
     }
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/pxlprfct/bookmarked#readme",
   "keywords": [
     "bookmark",
@@ -48,24 +51,24 @@
   ],
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "repository": {
-    "type": "git",
-    "url": "git+https://pxlprfct@github.com/pxlprfct/bookmarked.git"
-  },
+  "packageManager": "pnpm@8.7.0",
+  "repository": "pxlprfct/bookmarked.git",
   "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts --minify",
+    "build": "tsup",
+    "dev": "vitest",
+    "exports": "attw --pack .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "release": "changeset version && changeset publish",
+    "syncpack:format": "syncpack format",
+    "syncpack:update": "syncpack update",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
     "test:ui": "vitest --ui",
-    "watch": "pnpm run build -- --watch src",
-    "release": "changeset publish"
+    "tsc": "tsc",
+    "watch": "pnpm run build -- --watch src"
   },
-  "packageManager": "pnpm@8.7.0",
-  "types": "dist/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  }
+  "type": "module"
 }
