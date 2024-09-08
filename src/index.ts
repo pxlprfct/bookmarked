@@ -12,3 +12,11 @@ export const bookmarked = (content?: (Bookmark | Folder)[]): string =>
     `  </P>`,
     `</DL>`,
   ].join('\n');
+
+export type {
+  Bookmark,
+  Folder,
+  FolderOrBookmarkProperties,
+  FolderProperties,
+  BookmarkProperties,
+} from './ts/types';
