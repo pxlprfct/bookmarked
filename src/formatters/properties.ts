@@ -1,5 +1,5 @@
-import { hasProperties } from '../utils';
-import { FolderOrBookmarkProperties } from '../ts/types';
+import { hasProperties } from '../utils.ts';
+import type { FolderOrBookmarkProperties } from '../ts/types.ts';
 
 const format = ([key, value]: [string, unknown]): string => `${key}="${value}"`;
 

@@ -1,4 +1,8 @@
-import { Folder, Bookmark, FolderOrBookmarkProperties } from './ts/types';
+import type {
+  Folder,
+  Bookmark,
+  FolderOrBookmarkProperties,
+} from './ts/types.ts';
 
 export const indentLeft = (indent: number): string => ' '.repeat(indent);
 

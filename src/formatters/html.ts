@@ -1,11 +1,10 @@
-import addBookmark from './bookmark';
-import { indentLeft, isBookmark, isFolder } from '../utils';
-import { Bookmark, Folder } from '../ts/types';
-import { DEFAULT_AMOUNT_TO_PAD_BY } from '../constants';
-import addProperties from './properties';
+import addBookmark from './bookmark.ts';
+import { indentLeft, isBookmark, isFolder } from '../utils.ts';
+import type { Bookmark, Folder } from '../ts/types.ts';
+import { DEFAULT_AMOUNT_TO_PAD_BY } from '../constants.ts';
+import addProperties from './properties.ts';
 
 const buildFolder = (folder: Folder) =>
-  // eslint-disable-next-line no-useless-concat
   `<H3` + `${addProperties(folder.properties)}` + `>${folder.name}</H3>`;
 
 const addFolder = (folder: Folder, pad: string): string =>
