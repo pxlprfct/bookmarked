@@ -1,22 +1,21 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "es2017",
-    "noImplicitAny": true,
-    "removeComments": true,
-    "declaration": true,
-    "declarationDir": "./dist",
-    "preserveConstEnums": true,
-    "outDir": "./dist",
-    "rootDir": "src",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "strict": true,
-    "sourceMap": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
-    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+    "moduleResolution": "Bundler",
     "plugins": [
       {
         "name": "typescript-tslint-plugin"

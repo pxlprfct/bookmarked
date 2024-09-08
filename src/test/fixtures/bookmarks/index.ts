@@ -1,5 +1,5 @@
 import {
-  BLACK_GIRLS_CODE,
+  CODEBAR,
   FREE_CODE_CAMP,
   THE_NICEST_PLACE,
   NPM,
@@ -15,7 +15,7 @@ import {
 } from './bookmarks__properties';
 
 const BOOKMARKS = {
-  BLACK_GIRLS_CODE,
+  CODEBAR,
   FREE_CODE_CAMP,
   THE_NICEST_PLACE,
   NPM,

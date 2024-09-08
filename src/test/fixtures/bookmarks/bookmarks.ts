@@ -1,8 +1,8 @@
-import { Bookmark } from '../../../ts/types';
+import type { Bookmark } from '../../../ts/types';
 
-export const BLACK_GIRLS_CODE: Bookmark = {
-  href: 'https://www.blackgirlscode.com/',
-  name: 'Black Girls Code, BlackGirlsCode, Women of Color in Technology',
+export const CODEBAR: Bookmark = {
+  href: 'https://codebar.io/',
+  name: 'Making tech more diverse and welcoming by bringing people together and helping teach programming skills.',
 };
 
 export const FREE_CODE_CAMP: Bookmark = {

@@ -5,38 +5,42 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: checkout 🏗️
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Setup pnpm
+      - name: setup pnpm 🏗️
         uses: pnpm/action-setup@v2
 
-      - name: Setup Node.js
+      - name: setup node.js 🏗️
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
 
-      - name: Install dependencies
+      - name: install dependencies 📦
         run: pnpm install --frozen-lockfile
 
-      - name: Lint
-        run: pnpm run lint
-
-      - name: Build
+      - name: build 👷
         run: pnpm run build
 
-      - name: Test
+      - name: test 🧑‍🔬
         run: pnpm run test
 
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: lint 💅
+        run: pnpm run lint
+
+      - name: exports 🚚
+        run: pnpm run exports
+
+      - name: tsc 🚨
+        run: pnpm run tsc

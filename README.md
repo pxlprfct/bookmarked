@@ -3,10 +3,6 @@
 ![GitHub](https://img.shields.io/github/license/pxlprfct/bookmarked)
 ![npm](https://img.shields.io/npm/v/bookmarked)
 
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=coverage)](https://sonarcloud.io/dashboard?id=bookmarked)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=ncloc)](https://sonarcloud.io/dashboard?id=bookmarked)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=bookmarked)
-
 A tiny (dependency free!) library for building bookmark files.
 
 `bookmarked` supports ES Modules (ESM) and CommonJS (CJS) - so it'll be wherever
@@ -27,8 +23,8 @@ import { bookmarked } from "bookmarked";
 
 const bookmarks = [
   {
-    href: "https://www.blackgirlscode.com/",
-    name: "Black Girls Code, BlackGirlsCode, Women of Color in Technology",
+    href: "https://codebar.io/",
+    name: "Making tech more diverse and welcoming by bringing people together and helping teach programming skills",
   },
   {
     href: "https://www.freecodecamp.org/",
@@ -50,7 +46,7 @@ const html = bookmarked(bookmarks);
 <DL>
   <P>
     <DT>
-      <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+      <A HREF="https://codebar.io/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
     </DT>
     <DT>
       <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
@@ -67,7 +63,7 @@ const html = bookmarked(bookmarks);
     name: "Learn to code",
     children: [
       {
-        href: "https://www.blackgirlscode.com/",
+        href: "https://codebar.io/",
         name: "Black Girls Code, BlackGirlsCode, Women of Color in Technology",
       },
       {
@@ -89,7 +85,7 @@ const html = bookmarked(bookmarks);
     <DL>
       <P>
         <DT>
-          <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+          <A HREF="https://codebar.io/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
         </DT>
         <DT>
           <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
@@ -111,7 +107,7 @@ const html = bookmarked(bookmarks);
         name: "Learn Programming",
         children: [
           {
-            href: "https://www.blackgirlscode.com/",
+            href: "https://codebar.io/",
             name:
               "Black Girls Code, BlackGirlsCode, Women of Color in Technology",
           },
@@ -150,7 +146,7 @@ const html = bookmarked(bookmarks);
         <DL>
           <P>
             <DT>
-              <A HREF="https://www.blackgirlscode.com/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
+              <A HREF="https://codebar.io/">Black Girls Code, BlackGirlsCode, Women of Color in Technology</A>
             </DT>
             <DT>
               <A HREF="https://www.freecodecamp.org/">Learn to Code — For Free — Coding Courses for Busy People</A>
