@@ -3,10 +3,6 @@
 ![GitHub](https://img.shields.io/github/license/pxlprfct/bookmarked)
 ![npm](https://img.shields.io/npm/v/bookmarked)
 
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=coverage)](https://sonarcloud.io/dashboard?id=bookmarked)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=ncloc)](https://sonarcloud.io/dashboard?id=bookmarked)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=bookmarked&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=bookmarked)
-
 A tiny (dependency free!) library for building bookmark files.
 
 `bookmarked` supports ES Modules (ESM) and CommonJS (CJS) - so it'll be wherever
