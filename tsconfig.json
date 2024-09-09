@@ -16,6 +16,9 @@
     "allowUnreachableCode": false,
     "noImplicitAny": true,
     "moduleResolution": "Bundler",
+    "lib": [
+      "es2022"
+    ],
     "plugins": [
       {
         "name": "typescript-tslint-plugin"
