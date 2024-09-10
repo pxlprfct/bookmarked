@@ -25,12 +25,12 @@ const addFolder = (folder: Folder, pad: string): string =>
 const buildHtml = (content: (Bookmark | Folder)[], indent: number): string =>
   content
     .reduce((html: string[], current) => {
-      if (isFolder(current)) {
-        html.push(addFolder(current, indentLeft(indent)));
-      }
+      const pad = indentLeft(indent);
 
-      if (isBookmark(current)) {
-        html.push(addBookmark(current, indentLeft(indent)));
+      if (isFolder(current)) {
+        html.push(addFolder(current, pad));
+      } else if (isBookmark(current)) {
+        html.push(addBookmark(current, pad));
       }
 
       return html;

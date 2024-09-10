@@ -1,4 +1,4 @@
-import type { Bookmark } from '../../../ts/types';
+import type { Bookmark } from '../../../../ts/types';
 import { CODEBAR } from './bookmarks';
 
 export const BOOKMARK_WITH_DATE_ADDED: Bookmark = {

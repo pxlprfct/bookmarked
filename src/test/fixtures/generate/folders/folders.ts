@@ -1,4 +1,4 @@
-import type { Folder } from '../../../ts/types';
+import type { Folder } from '../../../../ts/types';
 import {
   CODEBAR,
   FREE_CODE_CAMP,

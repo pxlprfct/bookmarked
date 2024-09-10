@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": ["src/index.ts"],
+  "project": ["src/**/*.ts"],
+  "ignoreDependencies": [
+    "husky",
+    "lint-staged",
+    "@commitlint/cli",
+    "@commitlint/config-conventional",
+    "@types/lint-staged"
+  ]
+}

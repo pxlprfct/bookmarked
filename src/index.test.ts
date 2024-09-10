@@ -1,6 +1,6 @@
 import { bookmarked } from './index';
-import BOOKMARKS from './test/fixtures/bookmarks/index';
-import FOLDERS from './test/fixtures/folders/index';
+import BOOKMARKS from './test/fixtures/generate/bookmarks/index';
+import FOLDERS from './test/fixtures/generate/folders/index';
 
 const {
   CODEBAR,
