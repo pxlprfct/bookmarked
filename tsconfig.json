@@ -19,11 +19,6 @@
     "lib": [
       "es2022"
     ],
-    "plugins": [
-      {
-        "name": "typescript-tslint-plugin"
-      }
-    ],
     "types": [
       "vitest/globals"
     ]
