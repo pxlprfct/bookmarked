@@ -64,7 +64,7 @@
     "test:ui": "vitest --ui",
     "tsc": "tsc",
     "watch": "pnpm run build -- --watch src",
-    "knip": "knip"
+    "knip": "VITE_CJS_IGNORE_WARNING=true knip"
   },
   "type": "module"
 }
