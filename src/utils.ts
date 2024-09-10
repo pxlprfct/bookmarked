@@ -2,13 +2,12 @@ import type { Folder, Bookmark, FolderOrBookmarkProperties } from './ts/types';
 
 export const indentLeft = (indent: number): string => ' '.repeat(indent);
 
-export const isUndefined = (variable: unknown): boolean =>
-  variable === undefined;
+const isUndefined = (variable: unknown): boolean => variable === undefined;
 
-export const isObject = (variable: unknown): boolean =>
+const isObject = (variable: unknown): boolean =>
   isUndefined(variable) ? false : typeof variable === 'object';
 
-export const isEmpty = (variable: unknown): boolean =>
+const isEmpty = (variable: unknown): boolean =>
   Object.keys(variable as Record<string, string>).length === 0;
 
 export const hasProperties = (
