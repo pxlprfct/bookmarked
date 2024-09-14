@@ -1,5 +1,11 @@
 # bookmarked
 
+## 3.0.9
+
+### Patch Changes
+
+- ff9e69c: added support for value-less attributes
+
 ## 3.0.8
 
 ### Patch Changes
