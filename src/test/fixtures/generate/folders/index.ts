@@ -29,4 +29,6 @@ const FOLDERS = {
   FOLDER_WITH_CUSTOM_PROPERTIES,
 };
 
+export { SAFARI_READING_LIST } from './folder__safari';
+
 export default FOLDERS;

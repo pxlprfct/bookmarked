@@ -1,8 +1,14 @@
 import { hasProperties } from '../utils';
 import type { FolderOrBookmarkProperties } from '../ts/types';
 
-const format = ([key, value]: [string, unknown]): `${string}="${string}"` =>
-  `${key}="${value}"`;
+const format = ([key, value]: [string, unknown]):
+  | `${string}="${string}"`
+  | `${string}` => {
+  if (value === true) {
+    return `${key}`;
+  }
+  return `${key}="${value}"`;
+};
 
 const formatProperties = (properties: FolderOrBookmarkProperties): string =>
   // adding a space to the start  " <H3 foo.../>"
