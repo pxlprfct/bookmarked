@@ -1,6 +1,8 @@
 import { bookmarked } from './index';
 import BOOKMARKS from './test/fixtures/generate/bookmarks/index';
-import FOLDERS from './test/fixtures/generate/folders/index';
+import FOLDERS, {
+  SAFARI_READING_LIST,
+} from './test/fixtures/generate/folders/index';
 
 const {
   CODEBAR,
@@ -543,5 +545,33 @@ describe(`The generated file structure should conform to the 'NETSCAPE-Bookmark-
           </DL>"
         `);
     });
+  });
+});
+
+describe('edgecases', () => {
+  it("bookmarks exported from safari have a 'FOLDED' attribute (without a value)", () => {
+    expect(bookmarked([SAFARI_READING_LIST])).toMatchInlineSnapshot(`
+      "<!DOCTYPE NETSCAPE-Bookmark-file-1>
+      <!-- This is an automatically generated file.
+           It will be read and overwritten.
+           DO NOT EDIT! -->
+      <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+      <TITLE>Bookmarks</TITLE>
+      <H1>Bookmarks</H1>
+      <DL>
+        <P>
+          <DT>
+            <H3 id="com.apple.ReadingList" FOLDED>Reading List</H3>
+          </DT>
+          <DL>
+            <P>
+              <DT>
+                <A HREF="https://poignant.guide/book/chapter-1.html">Why's (Poignant) Guide to Ruby</A>
+              </DT>
+            </P>
+          </DL>
+        </P>
+      </DL>"
+    `);
   });
 });

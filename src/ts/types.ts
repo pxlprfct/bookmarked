@@ -1,5 +1,5 @@
 interface Record {
-  [key: string]: string | undefined;
+  [key: string]: string | true | undefined;
 }
 
 export interface Bookmark {
