@@ -59,7 +59,7 @@
     "release": "changeset version && changeset publish",
     "syncpack:format": "syncpack format",
     "syncpack:update": "syncpack update",
-    "test": "vitest",
+    "test": "vitest run",
     "test:coverage": "vitest --coverage",
     "test:ui": "vitest --ui",
     "tsc": "tsc",
