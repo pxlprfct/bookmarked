@@ -57,6 +57,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "release": "changeset version && changeset publish",
+    "clean": "rm -rf node_modules coverage dist && pnpm install",
     "syncpack:format": "syncpack format",
     "syncpack:update": "syncpack update",
     "test": "vitest run",
