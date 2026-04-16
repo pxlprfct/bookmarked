@@ -16,19 +16,9 @@
     "allowUnreachableCode": false,
     "noImplicitAny": true,
     "moduleResolution": "Bundler",
-    "lib": [
-      "es2022"
-    ],
-    "types": [
-      "vitest/globals"
-    ]
+    "lib": ["es2022"],
+    "types": ["vitest/globals"]
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "*.test.ts",
-    "src/test/"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "*.test.ts", "src/test/"]
 }
