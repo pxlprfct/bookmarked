@@ -11,11 +11,7 @@ export default defineConfig({
         branches: 100,
         lines: 100,
       },
-      exclude: [
-        ...configDefaults.exclude,
-        'commitlint.config.ts',
-        'lint-staged.config.js',
-      ],
+      exclude: [...configDefaults.exclude, 'lint-staged.config.js'],
     },
     clearMocks: true,
     mockReset: true,
