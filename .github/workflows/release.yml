@@ -1,8 +1,5 @@
 name: release
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
-
 on:
   push:
     branches:
@@ -36,6 +33,10 @@ jobs:
       - name: build 👷
         run: pnpm run build
 
+      - name: configure npm for authentication 📦
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
       - name: create release pull request or publish to npm 🚀
         id: changesets
         uses: changesets/action@v1
@@ -43,4 +44,3 @@ jobs:
           publish: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

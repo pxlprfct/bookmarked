@@ -1,8 +1,5 @@
 name: pr
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
-
 on:
   pull_request:
     branches:
