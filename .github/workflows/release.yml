@@ -19,8 +19,6 @@ jobs:
     steps:
       - name: 🏗️ checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
 
       - name: 🏗️ setup pnpm
         uses: pnpm/action-setup@v3
@@ -49,5 +47,5 @@ jobs:
         with:
           publish: pnpm run release
         env:
-          GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
