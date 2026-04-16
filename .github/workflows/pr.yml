@@ -34,7 +34,7 @@ jobs:
         run: pnpm run build
 
       - name: test 🧑‍🔬
-        run: pnpm run test
+        run: pnpm run test:coverage
 
       - name: lint 💅
         run: pnpm run lint
