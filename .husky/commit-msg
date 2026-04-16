@@ -1,4 +1,1 @@
-#!/usr/bin/env sh
-test -n "$HUSKY_GIT_PARAMS" || exit 0
-pnpm exec commitlint -e < $HUSKY_GIT_PARAMS >/dev/null 2>&1 || true
-exit $?
+pnpm exec commitlint --edit

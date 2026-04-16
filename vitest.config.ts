@@ -1,5 +1,5 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vitest/config';
+import { configDefaults, defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
@@ -11,6 +11,11 @@ export default defineConfig({
         branches: 100,
         lines: 100,
       },
+      exclude: [
+        ...configDefaults.exclude,
+        'commitlint.config.ts',
+        'lint-staged.config.js',
+      ],
     },
     clearMocks: true,
     mockReset: true,

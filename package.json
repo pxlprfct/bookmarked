@@ -47,6 +47,7 @@
   "packageManager": "pnpm@10.33.0",
   "repository": "pxlprfct/bookmarked.git",
   "scripts": {
+    "prepare": "husky",
     "build": "tsup",
     "changeset": "changeset",
     "dev": "vitest",
@@ -60,6 +61,7 @@
     "syncpack:update": "syncpack update",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
+    "test:coverage:run": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "tsc": "tsc",
     "watch": "pnpm run build -- --watch src",
