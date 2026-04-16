@@ -5,8 +5,7 @@
 
 A tiny (dependency free!) library for building bookmark files.
 
-`bookmarked` supports ES Modules (ESM) and CommonJS (CJS) - so it'll be wherever
-you need it.
+`bookmarked` supports ES Modules (ESM) and CommonJS (CJS) - so it'll be wherever you need it.
 
 ## How to install
 
@@ -169,6 +168,4 @@ const html = bookmarked(bookmarks);
 </DL>
 ```
 
-Check out the
-[test file](https://github.com/pxlprfct/bookmarked/blob/main/src/index.test.ts)
-for more examples
+Check out the [test file](https://github.com/pxlprfct/bookmarked/blob/main/src/index.test.ts) for more examples
