@@ -5,42 +5,49 @@ on:
     branches:
       - main
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   release:
     name: release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - name: checkout 🏗️
-        uses: actions/checkout@v3
+      - name: 🏗️ checkout
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
 
-      - name: setup pnpm 🏗️
-        uses: pnpm/action-setup@v2
+      - name: 🏗️ setup pnpm
+        uses: pnpm/action-setup@v3
 
-      - name: setup node.js 🏗️
-        uses: actions/setup-node@v3
+      - name: 🏗️ setup node.js
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
 
-      - name: install dependencies 📦
+      - name: 📦 install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: build 👷
+      - name: 👷 build
         run: pnpm run build
 
-      - name: configure npm for authentication 📦
+      - name: 📦 configure npm for authentication
         run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          npm config set //registry.npmjs.org/:_authToken "${NPM_TOKEN}"
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: create release pull request or publish to npm 🚀
+      - name: 🚀 create release pull request or publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
           publish: pnpm run release
         env:
           GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
