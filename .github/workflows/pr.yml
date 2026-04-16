@@ -1,8 +1,5 @@
 name: pr
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
-
 on:
   pull_request:
     branches:
@@ -15,38 +12,40 @@ concurrency:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
-      - name: checkout 🏗️
-        uses: actions/checkout@v3
+      - name: 🏗️ checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: setup pnpm 🏗️
-        uses: pnpm/action-setup@v2
+      - name: 🏗️ setup pnpm
+        uses: pnpm/action-setup@v3
 
-      - name: setup node.js 🏗️
-        uses: actions/setup-node@v3
+      - name: 🏗️ setup node.js
+        uses: actions/setup-node@v4
         with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
+          node-version-file: .nvmrc
+          cache: pnpm
 
-      - name: install dependencies 📦
+      - name: 📦 install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: build 👷
+      - name: 👷 build
         run: pnpm run build
 
-      - name: test 🧑‍🔬
-        run: pnpm run test
+      - name: 🧑‍🔬 test
+        run: pnpm run test:coverage
 
-      - name: lint 💅
+      - name: 💅 lint
         run: pnpm run lint
 
-      - name: exports 🚚
+      - name: 🚚 exports
         run: pnpm run exports
 
-      - name: tsc 🚨
+      - name: 🚨 tsc
         run: pnpm run tsc
 
-      - name: knip ✂️
+      - name: ✂️ knip
         run: pnpm run knip
