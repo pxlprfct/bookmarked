@@ -23,7 +23,7 @@
     "tsup": "8.5.1",
     "typescript": "5.9.3",
     "typescript-eslint": "8.58.2",
-    "vitest": "3.2.4"
+    "vitest": "4.1.0"
   },
   "exports": {
     "./package.json": "./package.json",
