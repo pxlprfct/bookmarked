@@ -7,9 +7,6 @@ on:
   push:
     tags: ['v*']
 
-permissions:
-  contents: read
-
 jobs:
   stage:
     runs-on: ubuntu-latest
