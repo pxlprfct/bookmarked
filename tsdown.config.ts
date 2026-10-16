@@ -6,5 +6,4 @@ export default defineConfig({
   dts: true,
   clean: true,
   publint: true,
-  attw: { profile: 'node16' },
 });

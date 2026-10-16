@@ -2,50 +2,50 @@ name: pr
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
-  ci:
+  verify:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
     steps:
-      - name: 🏗️ checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: 🏗️ setup pnpm
-        uses: pnpm/action-setup@v3
-
-      - name: 🏗️ setup node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
         with:
           node-version-file: .nvmrc
           cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm format
+      - run: pnpm lint
+      - run: pnpm tsc
+      - run: pnpm test:coverage
+      - run: pnpm build
+      - run: pnpm exports
+      - run: pnpm deadcode
 
-      - name: 📦 install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: 👷 build
-        run: pnpm run build
-
-      - name: 🧑‍🔬 test
-        run: pnpm run test:coverage
-
-      - name: 💅 lint
-        run: pnpm run lint
-
-      - name: 🚚 exports
-        run: pnpm run exports
-
-      - name: 🚨 tsc
-        run: pnpm run tsc
-
-      - name: ✂️ knip
-        run: pnpm run knip
+  node:
+    name: node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node }}
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: smoke test the built package (ESM and CJS)
+        run: |
+          node --input-type=module -e "import { bookmarked } from './dist/index.mjs'; if (!bookmarked().includes('NETSCAPE')) process.exit(1)"
+          node -e "const { bookmarked } = require('./dist/index.cjs'); if (!bookmarked().includes('NETSCAPE')) process.exit(1)"
