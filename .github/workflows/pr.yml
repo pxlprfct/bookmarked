@@ -30,8 +30,8 @@ jobs:
       - run: pnpm exports
       - run: pnpm deadcode
 
-  node:
-    name: node ${{ matrix.node }}
+  smoke:
+    name: consume on node ${{ matrix.node }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -39,12 +39,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: pnpm/action-setup@v4
+      # build tooling (tsdown) needs a modern node; consumers only need `engines`
       - uses: actions/setup-node@v5
         with:
-          node-version: ${{ matrix.node }}
+          node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ matrix.node }}
       - name: smoke test the built package (ESM and CJS)
         run: |
           node --input-type=module -e "import { bookmarked } from './dist/index.mjs'; if (!bookmarked().includes('NETSCAPE')) process.exit(1)"
