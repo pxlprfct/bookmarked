@@ -30,7 +30,7 @@ importers:
         specifier: 10.4.1
         version: 10.4.1
       fallow:
-        specifier: ^3.33.1
+        specifier: 3.33.1
         version: 3.33.1
       husky:
         specifier: 9.1.7
@@ -39,16 +39,16 @@ importers:
         specifier: 17.6.0
         version: 17.6.0
       oxlint:
-        specifier: ^1.88.0
+        specifier: 1.88.0
         version: 1.88.0
       prettier:
         specifier: 3.9.10
         version: 3.9.10
       publint:
-        specifier: ^0.3.25
+        specifier: 0.3.25
         version: 0.3.25
       tsdown:
-        specifier: ^0.23.1
+        specifier: 0.23.1
         version: 0.23.1(@arethetypeswrong/core@0.18.5)(oxc-resolver@11.24.2)(publint@0.3.25)(typescript@7.0.2)
       typescript:
         specifier: 7.0.2
