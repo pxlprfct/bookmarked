@@ -34,7 +34,6 @@ const bookmarks = [
 const html = bookmarked(bookmarks);
 ```
 
-<!-- prettier-ignore -->
 ```html
 <!DOCTYPE NETSCAPE-Bookmark-file-1>
 <!-- This is an automatically generated file.
@@ -75,7 +74,6 @@ const html = bookmarked(bookmarks);
 ];
 ```
 
-<!-- prettier-ignore -->
 ```html
 ...
 <DL>
@@ -131,7 +129,6 @@ const html = bookmarked(bookmarks);
 ];
 ```
 
-<!-- prettier-ignore -->
 ```html
 ...
 <DL>
