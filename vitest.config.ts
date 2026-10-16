@@ -1,23 +1,11 @@
-/// <reference types="vitest" />
-import { configDefaults, defineConfig } from 'vitest/config';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    globals: true,
     coverage: {
-      thresholds: {
-        statements: 100,
-        functions: 100,
-        branches: 100,
-        lines: 100,
-      },
-      exclude: [
-        ...configDefaults.exclude,
-        'commitlint.config.ts',
-        'lint-staged.config.js',
-      ],
+      include: ['src/**/*.ts'],
+      exclude: ['src/types.ts'],
+      thresholds: { 100: true },
     },
-    clearMocks: true,
-    mockReset: true,
   },
 });

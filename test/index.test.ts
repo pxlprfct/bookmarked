@@ -1,8 +1,7 @@
-import { bookmarked } from './index';
-import BOOKMARKS from './test/fixtures/generate/bookmarks/index';
-import FOLDERS, {
-  SAFARI_READING_LIST,
-} from './test/fixtures/generate/folders/index';
+import { describe, expect, it } from 'vitest';
+import { bookmarked } from '../src/index';
+import BOOKMARKS from './fixtures/bookmarks/index';
+import FOLDERS, { SAFARI_READING_LIST } from './fixtures/folders/index';
 
 const {
   CODEBAR,

@@ -1,4 +1,4 @@
-import type { Folder } from '../../../../ts/types';
+import type { Folder } from '../../../src/types';
 
 export const SAFARI_READING_LIST: Folder = {
   name: 'Reading List',

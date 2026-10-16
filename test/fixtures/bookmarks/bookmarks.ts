@@ -1,4 +1,4 @@
-import type { Bookmark } from '../../../../ts/types';
+import type { Bookmark } from '../../../src/types';
 
 export const CODEBAR: Bookmark = {
   href: 'https://codebar.io/',
