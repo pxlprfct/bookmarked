@@ -19,7 +19,7 @@
     "prettier": "3.9.10",
     "publint": "^0.3.25",
     "tsdown": "^0.23.1",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "vite": "8.3.4",
     "vitest": "5.0.5"
   },
@@ -61,7 +61,7 @@
     "lint:fix": "oxlint --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "exports": "attw --pack . --profile node16",
+    "exports": "attw --pack .",
     "deadcode": "fallow dead-code",
     "verify": "pnpm format && pnpm lint && pnpm tsc && pnpm test:coverage && pnpm build && pnpm exports && pnpm deadcode",
     "release": "changeset publish",
