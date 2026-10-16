@@ -1,0 +1,7 @@
+{
+  "ignoreDependencies": [
+    "fallow",
+    "lint-staged",
+    "conventional-changelog-conventionalcommits"
+  ]
+}

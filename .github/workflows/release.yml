@@ -18,13 +18,13 @@ jobs:
       pull-requests: write
     steps:
       - name: 🏗️ checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 🏗️ setup pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
 
       - name: 🏗️ setup node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
@@ -33,7 +33,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: 👷 build
-        run: pnpm run build
+        run: pnpm run verify
 
       - name: 📦 configure npm for authentication
         run: |
@@ -46,6 +46,7 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: pnpm run release
+          version: pnpm exec changeset version
         env:
           GITHUB_TOKEN: ${{ github.token }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

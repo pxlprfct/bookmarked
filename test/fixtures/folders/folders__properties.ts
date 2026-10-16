@@ -1,5 +1,5 @@
 import { LEARN_PROGRAMMING_FOLDER } from './folders';
-import type { Folder } from '../../../../ts/types';
+import type { Folder } from '../../../src/types';
 
 export const FOLDER_WITH_DATE_ADDED: Folder = {
   ...LEARN_PROGRAMMING_FOLDER,
