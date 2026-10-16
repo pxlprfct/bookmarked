@@ -49,7 +49,10 @@
   "license": "MIT",
   "main": "./dist/index.cjs",
   "packageManager": "pnpm@10.33.0",
-  "repository": "pxlprfct/bookmarked.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pxlprfct/bookmarked.git"
+  },
   "scripts": {
     "prepare": "husky",
     "build": "tsdown",
