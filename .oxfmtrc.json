@@ -9,7 +9,7 @@
     "coverage",
     "pnpm-lock.yaml",
     "CHANGELOG.md",
-    ".pnpm-store"
-  ],
-  "embeddedLanguageFormatting": "off"
+    ".pnpm-store",
+    "README.md"
+  ]
 }
