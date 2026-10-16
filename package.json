@@ -6,6 +6,7 @@
   "bugs": "https://github.com/pxlprfct/bookmarked/issues",
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",
+    "@changesets/cli": "^3.0.3",
     "@commitlint/cli": "21.2.3",
     "@commitlint/config-conventional": "21.2.3",
     "@types/node": "26.6.5",
@@ -63,7 +64,9 @@
     "deadcode": "fallow dead-code",
     "verify": "pnpm format && pnpm lint && pnpm tsc && pnpm test:coverage && pnpm build && pnpm exports && pnpm deadcode",
     "dev": "vitest",
-    "watch": "tsdown --watch"
+    "watch": "tsdown --watch",
+    "changeset": "changeset",
+    "version": "changeset version"
   },
   "type": "module",
   "types": "./dist/index.d.cts",
