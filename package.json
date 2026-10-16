@@ -2,7 +2,7 @@
   "name": "bookmarked",
   "description": "A tiny (dependency free!) library for building bookmark files.",
   "version": "4.0.0",
-  "author": "Ollie Williams",
+  "author": "Ollie Williams <ollie@makework.studio>",
   "bugs": "https://github.com/pxlprfct/bookmarked/issues",
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",
@@ -37,14 +37,21 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "homepage": "https://github.com/pxlprfct/bookmarked#readme",
   "keywords": [
     "bookmark",
+    "bookmarks",
+    "netscape",
+    "html",
+    "export",
     "chrome",
     "firefox",
-    "safari"
+    "safari",
+    "edge",
+    "typescript"
   ],
   "license": "MIT",
   "main": "./dist/index.cjs",
@@ -82,5 +89,14 @@
     "*.{json,md,yml}": [
       "prettier --write"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=22.14.0"
+    }
   }
 }
