@@ -2,7 +2,7 @@
   "name": "bookmarked",
   "description": "A tiny (dependency free!) library for building bookmark files.",
   "version": "4.0.0",
-  "author": "Ollie Williams",
+  "author": "Ollie Williams <ollie@makework.studio>",
   "bugs": "https://github.com/pxlprfct/bookmarked/issues",
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",
@@ -15,8 +15,8 @@
     "fallow": "3.33.1",
     "husky": "9.1.7",
     "lint-staged": "17.6.0",
+    "oxfmt": "0.73.0",
     "oxlint": "1.88.0",
-    "prettier": "3.9.10",
     "publint": "0.3.25",
     "tsdown": "0.23.1",
     "typescript": "7.0.2",
@@ -37,14 +37,21 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "homepage": "https://github.com/pxlprfct/bookmarked#readme",
   "keywords": [
     "bookmark",
+    "bookmarks",
+    "netscape",
+    "html",
+    "export",
     "chrome",
     "firefox",
-    "safari"
+    "safari",
+    "edge",
+    "typescript"
   ],
   "license": "MIT",
   "main": "./dist/index.cjs",
@@ -61,8 +68,8 @@
     "tsc": "tsc",
     "lint": "oxlint --deny-warnings",
     "lint:fix": "oxlint --fix",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
+    "format": "oxfmt --check",
+    "format:fix": "oxfmt",
     "exports": "attw --pack .",
     "deadcode": "fallow dead-code",
     "verify": "pnpm format && pnpm lint && pnpm tsc && pnpm test:coverage && pnpm build && pnpm exports && pnpm deadcode",
@@ -80,10 +87,19 @@
   "lint-staged": {
     "*.{js,ts}": [
       "oxlint --fix",
-      "prettier --write"
+      "oxfmt --no-error-on-unmatched-pattern"
     ],
     "*.{json,md,yml}": [
-      "prettier --write"
+      "oxfmt --no-error-on-unmatched-pattern"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=22.14.0"
+    }
   }
 }
