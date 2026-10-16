@@ -53,7 +53,6 @@
   "scripts": {
     "prepare": "husky",
     "build": "tsdown",
-    "changeset": "changeset",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "tsc": "tsc",
@@ -64,9 +63,10 @@
     "exports": "attw --pack .",
     "deadcode": "fallow dead-code",
     "verify": "pnpm format && pnpm lint && pnpm tsc && pnpm test:coverage && pnpm build && pnpm exports && pnpm deadcode",
-    "release": "changeset publish",
     "dev": "vitest",
-    "watch": "tsdown --watch"
+    "watch": "tsdown --watch",
+    "changeset": "changeset",
+    "version": "changeset version"
   },
   "type": "module",
   "types": "./dist/index.d.cts",
